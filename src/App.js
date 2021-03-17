@@ -31,7 +31,7 @@ readRemoteFile("./1.csv", {
         });
       }
     });
-    areaSeries.setData(dayData);
+    return areaSeries.setData(dayData);
   },
 });
 
@@ -45,11 +45,6 @@ var firstRow = document.createElement('div');
 firstRow.innerText = 'BAGHERIA';
 firstRow.style.color = 'black';
 legend.appendChild(firstRow);
-
-function pad(n) {
-	var s = ('0' + n);
-	return s.substr(s.length - 2);
-}
 
 chart.subscribeCrosshairMove((param) => {
 	if (param.time) {
