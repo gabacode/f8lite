@@ -10,12 +10,17 @@
 	line-height: 18px;
 	font-weight: 300;
 }
-
-html, body {
-  height: 100%;
-}
-
 html {
   display: table;
   margin: auto;
+}
+.footer{
+	position:fixed;
+    bottom:0;
+    left:50%;
+    margin-left:-200px; /*negative half the width */
+    width:400px;
+}
+.footer p{
+	text-align:center;
 }

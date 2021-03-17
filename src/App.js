@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { readRemoteFile } from "react-papaparse";
 import { createChart } from "lightweight-charts";
@@ -59,8 +60,13 @@ chart.subscribeCrosshairMove((param) => {
 function App() {
   return (
     <div className="App">
-      <h1>Positivi Giornalieri a Bagheria</h1>
-      <h2>Aggiornato al 15/01/2021</h2>
+      <div className="container">
+        <h1>Positivi Giornalieri a Bagheria</h1>
+        <h2>Aggiornato al 15/01/2021</h2>
+        <div className="footer">
+          <p>Made with ❤️ by <a href="https://www.totel.it" target="_blank" rel="noopener noreferrer">Totel Media</a></p>
+        </div>
+      </div>
     </div>
   );
 }
