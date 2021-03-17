@@ -62,7 +62,7 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>Positivi Giornalieri a Bagheria</h1>
-        <h2>Aggiornato al 15/03/2021</h2>
+        <h2>Aggiornato al 16/03/2021</h2>
         <div className="footer">
           <p>Made with ❤️ by <a href="https://www.totel.it" target="_blank" rel="noopener noreferrer">Totel Media</a></p>
         </div>
