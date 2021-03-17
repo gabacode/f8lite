@@ -31,7 +31,7 @@ readRemoteFile("./1.csv", {
         });
       }
     });
-    return areaSeries.setData(dayData);
+    areaSeries.setData(dayData);
   },
 });
 
