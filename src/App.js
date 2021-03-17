@@ -1,29 +1,71 @@
-import './App.css';
-import { readRemoteFile } from 'react-papaparse'
-import { createChart } from 'lightweight-charts';
+import "./App.css";
+import { readRemoteFile } from "react-papaparse";
+import { createChart } from "lightweight-charts";
 
-const chart = createChart(document.body, { width: 400, height: 300 });
-const lineSeries = chart.addLineSeries();
+var chart = createChart(document.body, {
+  width: 1024, 
+  height: 300,
+  layout: {
+		textColor: '#000',
+		backgroundColor: '#fff',
+	},
+});
 
-readRemoteFile('./1.csv', {
+var areaSeries = chart.addAreaSeries({
+  topColor: 'rgba(38, 198, 218, 0.56)',
+  bottomColor: 'rgba(38, 198, 218, 0.04)',
+  lineColor: 'rgba(38, 198, 218, 1)',
+  lineWidth: 2,
+});
+
+let dayData = [];
+readRemoteFile("./1.csv", {
   header: true,
   download: true,
   complete: (results) => {
-    console.log(results);    
-    
-    lineSeries.setData([
-      { time: '2019-04-11', value: 80.01 },
-      { time: '2019-04-12', value: 96.63 },
-      { time: '2019-04-13', value: 76.64 },
-    ])
-  
+    results.data.map((dt) => {
+      if (dt.time) {
+        dayData.push({
+          time: dt.time,
+          value: parseFloat(dt.value),
+        });
+      }
+    });
+    areaSeries.setData(dayData);
+  },
+});
+
+document.body.style.position = 'relative';
+
+var legend = document.createElement('div');
+legend.classList.add('legend');
+document.body.appendChild(legend);
+
+var firstRow = document.createElement('div');
+firstRow.innerText = 'BAGHERIA';
+firstRow.style.color = 'black';
+legend.appendChild(firstRow);
+
+function pad(n) {
+	var s = ('0' + n);
+	return s.substr(s.length - 2);
+}
+
+chart.subscribeCrosshairMove((param) => {
+	if (param.time) {
+		const price = param.seriesPrices.get(areaSeries);
+		firstRow.innerText = 'BAGHERIA' + '  ' + price.toFixed(2);
+	}
+  else {
+  	firstRow.innerText = 'BAGHERIA';
   }
 });
 
 function App() {
   return (
     <div className="App">
-      <h1>DATA</h1>
+      <h1>Positivi Giornalieri a Bagheria</h1>
+      <h2>Aggiornato al 15/01/2021</h2>
     </div>
   );
 }
