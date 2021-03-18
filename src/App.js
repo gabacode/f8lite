@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css";
 import { readRemoteFile } from "react-papaparse";
 import { createChart } from "lightweight-charts";
 
