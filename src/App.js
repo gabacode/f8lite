@@ -1,5 +1,6 @@
 import { readRemoteFile } from "react-papaparse";
 import { createChart } from "lightweight-charts";
+import Footer from './components/Footer';
 
 var chart = createChart(document.body, {
   width: 1024, 
@@ -57,13 +58,11 @@ chart.subscribeCrosshairMove((param) => {
 
 function App() {
   return (
-    <div className="App">
+    <div className="App pt--40">
       <div className="container">
         <h1>Positivi Giornalieri a Bagheria</h1>
         <h2>Aggiornato al 16/03/2021</h2>
-        <div className="footer">
-          <p>Made with ❤️ by <a href="https://www.totel.it" target="_blank" rel="noopener noreferrer">Totel Media</a></p>
-        </div>
+        <Footer />
       </div>
     </div>
   );
