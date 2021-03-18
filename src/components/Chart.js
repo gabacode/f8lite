@@ -17,12 +17,13 @@ var chart = createChart(container, {
     },
 });
 
-var areaSeries = chart.addAreaSeries({
+var areaSeries = chart.addLineSeries({
     topColor: 'rgba(38, 198, 218, 0.56)',
     bottomColor: 'rgba(38, 198, 218, 0.04)',
     lineColor: 'rgba(38, 198, 218, 1)',
     lineWidth: 2,
     visible: true,
+    lineStyle: 1,
 });
 
 let dayData = [];
