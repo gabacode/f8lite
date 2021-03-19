@@ -1,14 +1,21 @@
+import React, { Component } from "react";
 import {readRemoteFile} from "react-papaparse";
 import {createChart} from "lightweight-charts";
 
-document.body.style.position = 'relative';
-var container = document.createElement('div');
-document.body.appendChild(container);
+class Chart extends Component{
+
+    static defaultProps = {
+		containerId: 'pos_chart',
+	};
+
+    chart = null;
+
+    componentDidMount(){
 
 var width = 1024;
 var height = 300;
 
-var chart = createChart(container, {
+var chart = createChart(this.props.containerId, {
     width: width,
     height: height,
     layout: {
@@ -64,7 +71,7 @@ smaLine.setData(smaData);
 
 var smalegend = document.createElement('div');
 smalegend.className = 'sma-legend';
-container.appendChild(smalegend);
+document.getElementById("pos_chart").appendChild(smalegend);
 
 
 function setMAText(smaVal) {
@@ -93,4 +100,23 @@ function calculateSMA(data, count) {
         });
     }
     return result;
+    }
+  }
+  componentWillUnmount() {
+    if (this.chart !== null) {
+        this.chart.remove();
+        this.chart = null;
+    }
 }
+
+render() {
+    return (
+        <div
+            id={ this.props.containerId }
+            className={ 'LightweightChart' }
+        />
+    );
+}
+}
+
+export default Chart;

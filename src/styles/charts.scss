@@ -1,0 +1,18 @@
+.legend {
+    left: 12px;
+    top: 12px;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300;
+  }
+
+.sma-legend {
+    width: 96px;
+    padding: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.23);
+    text-align: left;
+    z-index: 1000;
+    pointer-events: none;
+  }
