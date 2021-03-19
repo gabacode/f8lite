@@ -3,4 +3,4 @@ Questo progetto nasce dall'esigenza di comunicare i dati relativi all'incidenza 
 
 ## Work in Progress
 
-Per chi volesse partecipare al progetto, sentitevi liberi di farlo e pushare su questo repo.
+Se vuoi partecipare a questo progetto, sentiti liberi di farlo, pushando su questo repo.
