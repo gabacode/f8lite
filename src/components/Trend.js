@@ -11,7 +11,7 @@ class Trend extends Component{
         return (
     <Fragment>
       <div className="pt--20">
-      <h3>Situazione Settimanale</h3>
+      <h4>Variazione positivi su base settimanale</h4>
         <ReactSpeedometer
           minValue={0}
           maxValue={2}
