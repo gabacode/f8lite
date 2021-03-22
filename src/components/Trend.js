@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import ReactTooltip from "react-tooltip";
+import { FaQuestionCircle } from 'react-icons/fa';
 import ReactSpeedometer from "react-d3-speedometer"
 
 class Trend extends Component{
@@ -11,7 +13,14 @@ class Trend extends Component{
         return (
     <Fragment>
       <div className="pt--20">
-      <p>Variazione positivi su base settimanale</p>
+      <p>Variazione positivi su base settimanale
+        <span data-tip data-for="trendInfo">
+          &nbsp;<FaQuestionCircle />
+        </span>
+      </p>
+      <ReactTooltip id="trendInfo" place="right" effect="solid" type="info">
+          Rapporto tra il numero di nuovi positivi settimanali,<br /> e il numero di quelli della scorsa settimana
+      </ReactTooltip>
         <ReactSpeedometer
           minValue={0}
           maxValue={2}
