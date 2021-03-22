@@ -14,8 +14,8 @@ function App() {
         <Chart />
         <div className="container center">
           <div className="row">
+            <Stats/>
             <Trend/>
-            <Stats />
           </div>
         </div>
         <Footer />
