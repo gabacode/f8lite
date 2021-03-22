@@ -12,7 +12,7 @@ class Chart extends Component{
 
     componentDidMount(){
 
-var width = 1024;
+var width = 960;
 var height = 300;
 
 var chart = createChart(this.props.containerId, {
@@ -25,16 +25,14 @@ var chart = createChart(this.props.containerId, {
 });
 
 var areaSeries = chart.addLineSeries({
-    topColor: 'rgba(38, 198, 218, 0.56)',
-    bottomColor: 'rgba(38, 198, 218, 0.04)',
     lineColor: 'rgba(38, 198, 218, 1)',
-    lineWidth: 2,
+    lineWidth: 0,
     visible: true,
     lineStyle: 1,
 });
 
 let dayData = [];
-readRemoteFile("./1.csv", {
+readRemoteFile("./datasets/1d.csv", {
     header: true,
     download: true,
     complete: (results) => {
@@ -79,7 +77,7 @@ function setMAText(smaVal) {
     if (smaVal !== undefined) {
         val = (Math.round(smaVal * 100) / 100).toFixed(2);
     }
-    smalegend.innerHTML = 'MA7 <span style="color:rgba(38, 198, 218, 1)">' + val + '</span>';
+    smalegend.innerHTML = 'SMA7 <span style="color:rgba(4, 231, 140, 1)">' + val + '</span>';
 }
 
 function calculateSMA(data, count) {
