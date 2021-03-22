@@ -8,7 +8,7 @@ class Trend extends Component{
     render(){
       //TODO implementazione props
         var lastWeek = 56;
-        var thisWeek = 53;
+        var thisWeek = 55;
         var trend = thisWeek/lastWeek;
         return (
     <Fragment>
