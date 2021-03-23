@@ -9,7 +9,7 @@ function App() {
     <div className="App pt--40">
       <div className="container">
         <h1>Positivi Giornalieri a Bagheria</h1>
-        <h2>Aggiornato al 20/03/2021</h2>
+        <h2>Aggiornato al 22/03/2021</h2>
         <small>Fonte: ASP DISTRETTO 39</small>
         <Chart />
         <div className="container center">

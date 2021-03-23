@@ -6,9 +6,9 @@ import { Chart } from "react-google-charts";
 class PieStats extends Component{
     render(){
         const pos_tot = 2205;
-        const pos_act = 203;
-        const libs = 1917;
-        const negs = 1537;
+        const pos_act = 201;
+        const libs = 1919;
+        const negs = 1538;
         const decs = 85;
         const pos_libs = libs - negs;
         return(
