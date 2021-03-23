@@ -5,7 +5,12 @@ import { Chart } from "react-google-charts";
 
 class PieStats extends Component{
     render(){
-        const pos_tot = 2199;
+        const pos_tot = 2205;
+        const pos_act = 203;
+        const libs = 1917;
+        const negs = 1537;
+        const decs = 85;
+        const pos_libs = libs - negs;
         return(
             <React.Fragment>
                 <div className="pt--20">
@@ -25,10 +30,10 @@ class PieStats extends Component{
                         loader={<div>Caricamento dati...</div>}
                         data={[
                             ['Stato', 'Numero'],
-                            ['Attuali Positivi', 201],
-                            ['Negativi', 1534],
-                            ['Liberati Positivi', 379],
-                            ['Deceduti', 85],
+                            ['Attuali Positivi', pos_act],
+                            ['Negativi', negs],
+                            ['Liberati Positivi', pos_libs],
+                            ['Deceduti', decs],
                         ]}
                         options={{
                             is3D: true,
