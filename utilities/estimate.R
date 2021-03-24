@@ -2,7 +2,7 @@ library(ggplot2)
 library(EpiEstim)
 
 scope <- "BAGHERIA"
-options(max.print=365)
+options(max.print=1235813)
 
 #R you're lame.
 `+` <- function(a, b) {
