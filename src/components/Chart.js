@@ -24,13 +24,6 @@ var chart = createChart(this.props.containerId, {
     },
 });
 
-var areaSeries = chart.addLineSeries({
-    lineColor: 'rgba(38, 198, 218, 1)',
-    lineWidth: 0,
-    visible: true,
-    lineStyle: 1,
-});
-
 let dayData = [];
 readRemoteFile("./datasets/1d.csv", {
     header: true,
@@ -44,10 +37,20 @@ readRemoteFile("./datasets/1d.csv", {
                 });
             }
         });
-        areaSeries.setData(dayData);
+        var posiLine = chart.addLineSeries({
+            lineColor: 'rgba(38, 198, 218, 1)',
+            lineWidth: 0,
+            visible: true,
+            lineStyle: 1,
+        });
+        
+        posiLine.setData(dayData);
+        setPosText(dayData[dayData.length - 1].value);
+        chart.subscribeCrosshairMove((param) => {
+            setPosText(param.seriesPrices.get(posiLine));
+        });
 
-        //START SMA
-        var smaData = calculateSMA(dayData, 7);
+        var smaData = calculateSMA(dayData, 7);        
         var smaLine = chart.addAreaSeries({
             color: 'rgba(4, 111, 232, 1)',
             lineWidth: 2,
@@ -59,25 +62,39 @@ readRemoteFile("./datasets/1d.csv", {
         chart.subscribeCrosshairMove((param) => {
             setMAText(param.seriesPrices.get(smaLine));
         });
-        //END SMA
+
     },
 });
+
+var posiLine = chart.addLineSeries();
+posiLine.setData(dayData);
 
 var smaData = calculateSMA(dayData);
 var smaLine = chart.addAreaSeries();
 smaLine.setData(smaData);
 
+
+var legend = document.createElement('div');
+legend.className = 'sma-legend';
+document.getElementById("pos_chart").appendChild(legend);
+
 var smalegend = document.createElement('div');
 smalegend.className = 'sma-legend';
 document.getElementById("pos_chart").appendChild(smalegend);
 
-
+function setPosText(posVal) {
+    let val = 'n/a';
+    if (posVal !== undefined) {
+        val = (Math.round(posVal * 100) / 100).toFixed(0);
+    }
+    legend.innerHTML = 'Positivi: <span style="color:rgba(44, 130, 201, 1)">' + val + '</span>';
+}
 function setMAText(smaVal) {
     let val = 'n/a';
     if (smaVal !== undefined) {
         val = (Math.round(smaVal * 100) / 100).toFixed(2);
     }
-    smalegend.innerHTML = 'SMA7 <span style="color:rgba(4, 231, 140, 1)">' + val + '</span>';
+    smalegend.innerHTML = 'SMA7 <span style="color:rgb(8 183 113)">' + val + '</span>';
 }
 
 function calculateSMA(data, count) {
