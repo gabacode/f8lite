@@ -33,3 +33,9 @@ ggplot(data = bag_w, aes(x = time, y = value)) +
   labs(title = "Incidenza settimanale al COVID19 a "+scope,
        subtitle = "Stima R: "+ER,
        x = "Data", y = "Numero nuovi positivi")
+
+#ALTRO...
+#plot(bag_R)
+#plot(bag_R, "R")
+#print(bag_R$R)
+#print(bag_R$R$`Mean(R)`)
