@@ -85,7 +85,7 @@ document.getElementById("pos_chart").appendChild(smalegend);
 function setPosText(posVal) {
     let val = 'n/a';
     if (posVal !== undefined) {
-        val = (Math.round(posVal * 100) / 100).toFixed(0);
+        val = posVal;
     }
     legend.innerHTML = 'Positivi: <span style="color:rgba(44, 130, 201, 1)">' + val + '</span>';
 }
