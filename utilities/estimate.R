@@ -15,10 +15,11 @@ options(max.print=1235813)
 
 #CARICAMENTO DATASET SETTIMANALE
 bag <- read.csv('../public/datasets/1w.csv')
+bag_d <- read.csv('../public/datasets/1d.csv')
 bag_w <- bag[1:(dim(bag)[1]-1),]
 
 #STIMA DI R
-log <- data.frame(Data = bag_w$time, Freq = bag_w$value)
+log <- data.frame(Data = bag_d$time, Freq = bag_d$value)
 log$Data <- as.Date(log$Data, "%Y-%m-%d")
 df <- data.frame(I = c(log$Freq))
 
