@@ -1,8 +1,6 @@
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import Chart from './components/Chart';
-import Stats from './components/PieStats';
 import Trend from './components/Trend';
-// import Redzone from './components/Redzone';
 import Footer from './components/Footer';
 
 function App() {
@@ -26,10 +24,7 @@ function App() {
           </Row>
         <Container className="center">
           <Row>
-            <Col xs={12} lg={6}>
-              <Stats/>
-            </Col>
-            <Col xs={12} lg={6}>
+            <Col xs={12}>
               <Trend/>
             </Col>
           </Row>
