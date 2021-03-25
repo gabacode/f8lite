@@ -7,8 +7,8 @@ class Trend extends Component{
   
     render(){
       //TODO implementazione props
-        var lastWeek = 52;
-        var thisWeek = 63;
+        var lastWeek = 57;
+        var thisWeek = 68;
         var trend = thisWeek/lastWeek;
         return (
     <Fragment>
@@ -19,7 +19,7 @@ class Trend extends Component{
         </span>
       </p>
       <ReactTooltip id="trendInfo" place="right" effect="solid" type="info">
-          Rapporto tra il numero di nuovi positivi settimanali,<br /> e il numero di quelli della scorsa settimana
+          Rapporto tra il numero di nuovi positivi settimanali ({thisWeek}),<br /> e il numero di quelli della scorsa settimana ({lastWeek})
       </ReactTooltip>
         <ReactSpeedometer
           minValue={0}

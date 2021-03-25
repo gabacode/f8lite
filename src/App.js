@@ -10,7 +10,7 @@ function App() {
         <Row>
           <Container>
             <h1>Positivi Giornalieri a Bagheria</h1>
-            <h2>Aggiornato al 23/03/2021</h2>
+            <h2>Aggiornato al 24/03/2021</h2>
             <small>Fonte: ASP DISTRETTO 39</small>
           </Container>
         </Row>
