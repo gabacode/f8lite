@@ -6,7 +6,7 @@ export default class Redzone extends Component {
 
   render() {
     const pop = 53714;
-    var pos = 57;
+    var pos = 68;
     let val = Math.round(((pos/pop)*100000));
 
     if(val>=0&&val<100){
