@@ -1,42 +1,38 @@
-import React, { Component, Fragment } from "react";
-import ReactSpeedometer from "react-d3-speedometer"
+import React, {Component, Fragment} from "react";
+import ReactTooltip from "react-tooltip";
+import { FaQuestionCircle } from 'react-icons/fa';
 
-class Redzone extends Component{
-    render(){
-        const pop = 53714;
-        var pos = 56;
-        const values = ((pos/pop)*100000);
-        return (
-    <Fragment>
-        <ReactSpeedometer
-          minValue={0}
-          maxValue={500}
-          value={values}
-          segments={2}
-          segmentColors={["green","red"]}
-          width={420}
-          needleHeightRatio={0.618}
-          currentValueText={String((values/100000).toFixed(6))+"%"}
-          customSegmentLabels={[
-            {
-              text: 'Tutto bene',
-              position: 'INSIDE',
-              color: '#fff',
-            },
-            {
-              text: 'Red Zone',
-              position: 'INSIDE',
-              color: '#fff',
-            },
-          ]}
-          ringWidth={42}
-          needleTransitionDuration={3333}
-          needleTransition="easeElastic"
-          needleColor={'#90f2ff'}
-          textColor={'#666'}
-        />
-      </Fragment>
-      );
-      }
+export default class Redzone extends Component { 
+
+  render() {
+    const pop = 53714;
+    var pos = 57;
+    let val = Math.round(((pos/pop)*100000));
+
+    if(val>=0&&val<100){
+      var color = "text-success";
     }
-    export default Redzone;
+    if(val>=100&&val<250){
+      var color = "text-warning";
+    }
+    if(val>=250){
+      var color = "text-danger";
+    }
+
+    return (
+      <Fragment>
+      <small className="ptb--0">Indice250:&nbsp;
+        <span className={`bold ${color}`}>
+          {val}
+        </span>
+        <span data-tip data-for="zoneInfo">
+            &nbsp;<FaQuestionCircle />
+        </span>
+      </small>
+      <ReactTooltip id="zoneInfo" place="right" effect="solid" type="info">
+      Incidenza giornaliera ogni 100k ab. (DL 13 marzo 2021 n.30), negli ultimi 7 giorni
+      </ReactTooltip>
+    </Fragment>
+    );
+  }
+}
