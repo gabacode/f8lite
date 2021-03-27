@@ -6,17 +6,18 @@ export default class Redzone extends Component {
 
   render() {
     const pop = 53714;
-    var pos = 68;
+    var pos = this.props.tw;
+    var color;
     let val = Math.round(((pos/pop)*100000));
 
     if(val>=0&&val<100){
-      var color = "text-success";
-    }
+      color = "text-success";
+    }else
     if(val>=100&&val<250){
-      var color = "text-warning";
-    }
+      color = "text-warning";
+    }else
     if(val>=250){
-      var color = "text-danger";
+      color = "text-danger";
     }
 
     return (
@@ -30,7 +31,7 @@ export default class Redzone extends Component {
         </span>
       </small>
       <ReactTooltip id="zoneInfo" place="right" effect="solid" type="info">
-      Incidenza giornaliera ogni 100k ab. (DL 13 marzo 2021 n.30), negli ultimi 7 giorni
+        Numero di nuovi contagi ogni 100.000 abitanti, negli ultimi 7 giorni.
       </ReactTooltip>
     </Fragment>
     );
