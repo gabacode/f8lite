@@ -30,10 +30,10 @@ readRemoteFile("./datasets/1d.csv", {
     download: true,
     complete: (results) => {
         results.data.map((dt) => {
-            if (dt.time) {
+            if (dt.data) {
                 dayData.push({
-                    time: dt.time,
-                    value: parseFloat(dt.value),
+                    time: dt.data,
+                    value: parseFloat(dt.nuovi_positivi),
                 });
             }
         });
