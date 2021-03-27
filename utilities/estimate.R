@@ -46,7 +46,7 @@ ER<-round(tail(bag_R_mean,1), digits = 2)
 print("Stima R per "+scope+": "+ER)
 
 #GRAFICO INCIDENZA SETTIMANALE
-ggplot(data = bag_w, aes(x = time, y = value)) +
+ggplot(data = bag_w, aes(x = data, y = nuovi_positivi)) +
   geom_bar(stat = "identity", fill = "#878dff") +
   labs(title = "Incidenza settimanale COVID19 a "+scope,
        subtitle = "Stima R: "+ER,

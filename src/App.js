@@ -6,7 +6,7 @@ import Trend from './components/Trend';
 import Footer from './components/Footer';
 
 function App() {
-    let lastUpdate = "2021, 3, 24";
+    let lastUpdate = "2021, 3, 26";
     let cityName = "Bagheria";
   return (
     <div className="App pt--40">
