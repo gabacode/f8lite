@@ -19,7 +19,7 @@ bag_d <- read.csv('../public/datasets/1d.csv')
 bag_w <- bag[1:(dim(bag)[1]-1),]
 
 #STIMA DI R
-log <- data.frame(Data = bag_d$time, Freq = bag_d$value)
+log <- data.frame(Data = bag_d$data, Freq = bag_d$nuovi_positivi)
 log$Data <- as.Date(log$Data, "%Y-%m-%d")
 df <- data.frame(I = c(log$Freq))
 
