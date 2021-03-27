@@ -11,12 +11,11 @@ export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      lastDay: 1,
       lastWeek: 1,
       thisWeek: 1,
     };
   }
-
-  lastUpdate = "2021, 3, 26";
   cityName = "Bagheria";
   daySet = "./datasets/1d.csv";
   weekSet = "./datasets/1w.csv";
@@ -38,8 +37,15 @@ export default class Dashboard extends Component {
       lastWeek: data[l-3][1],
     });
   };
+  getDay = (data) => {
+    var l = Object.keys(data).length;
+    this.setState({
+      lastDay: data[l-2][0],
+    });
+  };
 
   componentDidMount() {
+    this.parseData(this.daySet, this.getDay);
     this.parseData(this.weekSet, this.getWeek);
   }
 
@@ -51,7 +57,7 @@ export default class Dashboard extends Component {
             <Container>
               <h1>Positivi Giornalieri a {this.cityName}</h1>
               <h2>
-                Aggiornato al {format(new Date(this.lastUpdate), "dd/MM/yyyy")}
+                Aggiornato al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
               </h2>
               <small>Fonte: ASP DISTRETTO 39</small>
               <br />
@@ -65,7 +71,7 @@ export default class Dashboard extends Component {
                 size="sm"
                 href={this.daySet}
                 download={`covid19-${this.cityName.toLowerCase()}-${format(
-                  new Date(this.lastUpdate),
+                  new Date(this.state.lastDay),
                   "yyyyMMdd"
                 )}.csv`}
               >
