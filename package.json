@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.6.0",
+    "date-fns": "^2.19.0",
     "lightweight-charts": "^3.3.0",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",

@@ -4361,6 +4361,11 @@
     "whatwg-mimetype" "^2.3.0"
     "whatwg-url" "^8.0.0"
 
+"date-fns@^2.19.0":
+  "integrity" "sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg=="
+  "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.19.0.tgz"
+  "version" "2.19.0"
+
 "debug@^2.2.0":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
   "resolved" "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz"
