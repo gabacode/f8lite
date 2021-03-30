@@ -18,7 +18,6 @@ export default class Dashboard extends Component {
       cityName: this.props.cityName,
       pop: this.props.pop,
       daySet: "../datasets/"+this.props.scope+"/1d_"+this.props.scope+".csv",
-      weekSet: "../datasets/"+this.props.scope+"/1w_"+this.props.scope+".csv",
     };
   }
 
@@ -32,23 +31,25 @@ export default class Dashboard extends Component {
       },
     });
   }
-  getWeek = (data) => {
-    var l = Object.keys(data).length;
-    this.setState({
-      thisWeek: data[l-2][1],
-      lastWeek: data[l-3][1],
-    });
-  };
+
   getDay = (data) => {
     var l = Object.keys(data).length;
+    var wv = [];
+    var i;
+    for (i=0;i<l;i++){
+      wv.push((data)[i][2]);
+    }
+    var tw = wv.slice(-8).slice(0, -1).reduce((a, b) => a + b);
+    var lw = wv.slice(-15).slice(0, -8).reduce((a, b) => a + b);
     this.setState({
       lastDay: data[l-2][0],
+      lastWeek: parseInt(lw),
+      thisWeek: parseInt(tw),
     });
   };
 
   componentDidMount() {
     this.parseData(this.state.daySet, this.getDay);
-    this.parseData(this.state.weekSet, this.getWeek);
   }
 
   render() {
@@ -69,14 +70,7 @@ export default class Dashboard extends Component {
           <Chart url={this.state.daySet} />
           <Row>
             <Col xs={12} className="pt--0 ptb--30">
-              <Button
-                size="sm"
-                href={this.state.daySet}
-                download={`covid19-${this.state.cityName.toLowerCase()}-${format(
-                  new Date(this.state.lastDay),
-                  "yyyyMMdd"
-                )}.csv`}
-              >
+              <Button size="sm" href={this.state.daySet}>
                 Scarica Dataset
               </Button>
             </Col>
