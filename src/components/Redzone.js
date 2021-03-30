@@ -31,7 +31,8 @@ export default class Redzone extends Component {
         </span>
       </small>
       <ReactTooltip id="zoneInfo" place="right" effect="solid" type="info">
-        Numero di nuovi contagi ogni 100.000 abitanti, negli ultimi 7 giorni.
+        Numero di nuovi contagi ogni 100.000 abitanti, negli ultimi 7 giorni.<br />
+        E' calcolato dal numero di nuovi positivi settimanali ({this.props.tw}),<br />diviso il numero di abitanti ({this.props.pop})
       </ReactTooltip>
     </Fragment>
     );
