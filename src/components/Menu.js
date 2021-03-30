@@ -6,7 +6,6 @@ export default class Menu extends Component{
     render(){
         return(
             <Fragment>
-                <Container>
                 <Navbar bg="primary" variant="dark">
                     <Navbar.Brand href="/"><FaFeatherAlt/> f8lite</Navbar.Brand>
                     <Nav className="mr-auto">
@@ -17,7 +16,6 @@ export default class Menu extends Component{
                     <Nav.Link href="/altavilla">Altavilla Milicia</Nav.Link>
                     </Nav>
                 </Navbar>
-                </Container>
             </Fragment>
         )
     }
