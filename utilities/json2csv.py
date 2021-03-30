@@ -21,7 +21,6 @@ if choice == "n":
     dft_start = input("Inserire data di oggi\n")
     dft = pd.read_json(path+dft_start+'.json')
     dfy_start = input("Inserire data di ieri\n")
-    #dfy = pd.read_json(path+dfy_start+'.json')
     dfy = pd.read_csv(path+dfy_start+'.csv')
 elif choice == "y":
     try:
@@ -30,11 +29,9 @@ elif choice == "y":
         print("Proviamone un altro...")
         pass
     finally:
-        dft = pd.read_json(path+'latest.json')
-        #dft = pd.read_json(path+yesterday+'latest.json')
         dfy = pd.read_csv(path+yesterday+'.csv')
 else:
-    "ok..."
+    print("ok...")
 
 assert dft["data"][0] > dfy["data"][0], "Errore ci fu..probabilmente hai dati vecchi"
 
@@ -47,6 +44,7 @@ print(dft["variazione_totale_positivi"])
 
 choice = input("\nVuoi esportare? y/n\n")
 if choice == "y":
+    dft.to_csv(path+today+'.csv',index = None)
     dft.to_csv(path+'latest.csv',index = None)
     print("Fatto!")
 else:
