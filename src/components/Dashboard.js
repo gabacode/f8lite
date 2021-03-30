@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { readRemoteFile } from "react-papaparse";
 import { format } from "date-fns";
-import Chart from "./components/Chart";
-import Redzone from "./components/Redzone";
-import Trend from "./components/Trend";
-import Footer from "./components/Footer";
+import Chart from "./Chart";
+import Redzone from "./Redzone";
+import Trend from "./Trend";
+import Footer from "./Footer";
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -14,11 +14,13 @@ export default class Dashboard extends Component {
       lastDay: 1,
       lastWeek: 1,
       thisWeek: 1,
+      scope: this.props.scope,
+      cityName: this.props.cityName,
+      pop: this.props.pop,
+      daySet: "../datasets/"+this.props.scope+"/1d_"+this.props.scope+".csv",
+      weekSet: "../datasets/"+this.props.scope+"/1w_"+this.props.scope+".csv",
     };
   }
-  cityName = "Bagheria";
-  daySet = "./datasets/1d.csv";
-  weekSet = "./datasets/1w.csv";
 
   parseData(url, callBack) {
     readRemoteFile(url, {
@@ -45,8 +47,8 @@ export default class Dashboard extends Component {
   };
 
   componentDidMount() {
-    this.parseData(this.daySet, this.getDay);
-    this.parseData(this.weekSet, this.getWeek);
+    this.parseData(this.state.daySet, this.getDay);
+    this.parseData(this.state.weekSet, this.getWeek);
   }
 
   render() {
@@ -55,22 +57,22 @@ export default class Dashboard extends Component {
         <Container>
           <Row>
             <Container>
-              <h1>Positivi Giornalieri a {this.cityName}</h1>
+              <h1>Positivi Giornalieri a {this.state.cityName}</h1>
               <h2>
                 Aggiornato al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
               </h2>
               <small>Fonte: ASP DISTRETTO 39</small>
               <br />
-              <Redzone tw={this.state.thisWeek} />
+              <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
             </Container>
           </Row>
-          <Chart url={this.daySet} />
+          <Chart url={this.state.daySet} />
           <Row>
             <Col xs={12} className="pt--0 ptb--30">
               <Button
                 size="sm"
-                href={this.daySet}
-                download={`covid19-${this.cityName.toLowerCase()}-${format(
+                href={this.state.daySet}
+                download={`covid19-${this.state.cityName.toLowerCase()}-${format(
                   new Date(this.state.lastDay),
                   "yyyyMMdd"
                 )}.csv`}

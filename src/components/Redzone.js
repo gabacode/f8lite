@@ -5,7 +5,7 @@ import { FaQuestionCircle } from 'react-icons/fa';
 export default class Redzone extends Component { 
 
   render() {
-    const pop = 53714;
+    var pop = this.props.pop;
     var pos = this.props.tw;
     var color;
     let val = Math.round(((pos/pop)*100000));
