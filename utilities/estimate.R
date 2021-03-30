@@ -1,7 +1,7 @@
 library(ggplot2)
 library(EpiEstim)
 
-scope <- "BAGHERIA"
+scope <- "bagheria"
 options(max.print=1235813)
 
 #R you're lame.
@@ -14,8 +14,8 @@ options(max.print=1235813)
 }
 
 #CARICAMENTO DATASET SETTIMANALE
-bag <- read.csv('../public/datasets/1w.csv')
-bag_d <- read.csv('../public/datasets/1d.csv')
+bag <- read.csv('../public/datasets/'+scope+'/1w_'+scope+'.csv')
+bag_d <- read.csv('../public/datasets/'+scope+'/1d_'+scope+'.csv')
 bag_w <- bag[1:(dim(bag)[1]-1),]
 
 #STIMA DI R
