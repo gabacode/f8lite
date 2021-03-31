@@ -9,12 +9,12 @@ $small-mobile: 'only screen and (max-width: 479px)';
 
 @media #{$large-mobile} {
     .container {
-        width: 450px;
+        width: 550px;
     }
 }
 
 @media #{$small-mobile} {
     .container {
-        width: 390px;
+        width: 450px;
     }
 }

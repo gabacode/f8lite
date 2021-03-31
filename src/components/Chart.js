@@ -117,7 +117,18 @@ export default class Chart extends Component{
             }
             return result;
         }
-  }
+
+        new ResizeObserver(entries => {
+            if (entries.length === 0 || entries[0].target !== document.getElementById('pos_chart')) {
+                return;
+            }
+            const newRect = entries[0].contentRect;
+            chart.applyOptions({
+                width: newRect.width
+            });
+        }).observe(document.getElementById('pos_chart'));
+
+    }
   componentWillUnmount() {
     if (this.chart !== null) {
         this.chart.remove();
