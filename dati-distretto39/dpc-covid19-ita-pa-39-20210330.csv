@@ -3,4 +3,4 @@ data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintom
 2021-03-30T18:27:06.198Z,39,82067,Santa Flavia,38.08246,13.52758,,,2,86,88,0,5,551,12,651,1362,651,,,,
 2021-03-30T18:27:06.198Z,39,82035,Ficarazzi,38.089272,13.46891,,,9,73,82,3,3,530,4,616,1287,616,,,,
 2021-03-30T18:27:06.198Z,39,82023,Casteldaccia,38.05373,13.52967,,,4,36,40,-1,0,341,15,396,800,396,,,,
-2021-03-30T18:27:06.198Z,39,82004,Altavilla Milicia,38.0421,13.549009999999999,,,3,66,69,-1,0,296,9,374,764,374,,,,
+2021-03-30T18:27:06.198Z,39,82004,Altavilla Milicia,38.0421,13.549009999999999,,,3,66,69,-1,0,296,9,374,764,374,,,,Rettificato numero totale_positivi per via del doppio inserimento dello stesso paziente a causa di un errore di battitura
