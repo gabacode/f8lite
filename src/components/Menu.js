@@ -9,13 +9,13 @@ export default class Menu extends Component{
                 <Navbar bg="primary" variant="dark">
                     <Navbar.Brand href="/"><FaFeatherAlt/> f8lite</Navbar.Brand>
                     <Nav className="mr-auto">
-                        <Nav.Link href="/bagheria">Bagheria</Nav.Link>
-                        <Nav.Link href="/santaflavia">Santa Flavia</Nav.Link>
-                        <Nav.Link href="/ficarazzi">Ficarazzi</Nav.Link>
-                        <Nav.Link href="/casteldaccia">Casteldaccia</Nav.Link>
-                        <Nav.Link href="/altavilla">Altavilla Milicia</Nav.Link>
+                        <Nav.Link className="active" href="/bagheria">Bagheria</Nav.Link>
+                        <Nav.Link className="active" href="/santaflavia">Santa Flavia</Nav.Link>
+                        <Nav.Link className="active" href="/ficarazzi">Ficarazzi</Nav.Link>
+                        <Nav.Link className="active" href="/casteldaccia">Casteldaccia</Nav.Link>
+                        <Nav.Link className="active" href="/altavilla">Altavilla Milicia</Nav.Link>
                     </Nav>
-                    <Nav inline>
+                    <Nav>
                         <Button size="sm" href="https://github.com/gabacode/f8lite" target="_blank" rel="noopener noreferrer">
                             <FaGithub />
                         </Button>

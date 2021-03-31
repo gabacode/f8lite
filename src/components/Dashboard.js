@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { readRemoteFile } from "react-papaparse";
 import { format } from "date-fns";
+import Stats from "./Stats";
 import Chart from "./Chart";
 import Redzone from "./Redzone";
 import Trend from "./Trend";
@@ -18,6 +19,7 @@ export default class Dashboard extends Component {
       cityName: this.props.cityName,
       pop: this.props.pop,
       daySet: "../datasets/"+this.props.scope+"/1d_"+this.props.scope+".csv",
+      latest: "https://raw.githubusercontent.com/gabacode/f8lite/main/dati-distretto39/dpc-covid19-ita-pa-39-latest.csv",
     };
   }
 
@@ -48,8 +50,28 @@ export default class Dashboard extends Component {
     });
   };
 
+  getStats = (data) => {
+    var i;
+    var l = Object.keys(data).length;
+    for (i=1;i<(l-1);i++){
+      var city = (data[i][3]).toString();
+      if(city === this.props.cityName){
+        this.setState({
+          attuali: data[i][10],
+          ricoverati: data[i][8],
+          guariti: data[i][13],
+          deceduti: data[i][14],
+          // totali: data[i][15],
+        });
+      }else{
+        //pass
+      }      
+    }
+  };
+
   componentDidMount() {
     this.parseData(this.state.daySet, this.getDay);
+    this.parseData(this.state.latest, this.getStats);
   }
 
   render() {
@@ -58,15 +80,17 @@ export default class Dashboard extends Component {
         <Container>
           <Row>
             <Container>
-              <h1>Positivi Giornalieri a {this.state.cityName}</h1>
-              <h2>
-                Aggiornato al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
-              </h2>
-              <small>Fonte: ASP DISTRETTO 39</small>
+              <h1>Comune di {this.state.cityName}</h1>
+              <h4>Popolazione: {this.props.pop} abitanti</h4>
+              <small>Fonte dati: ASP DISTRETTO 39</small>
               <br />
-              <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
             </Container>
           </Row>
+          <Stats attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti}/>
+          <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
+          <h3 className="pt--10 ptb--20">
+            Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
+          </h3>
           <Chart url={this.state.daySet} />
           <Row>
             <Col xs={12} className="pt--0 ptb--30">
