@@ -41,7 +41,7 @@ data,comune,nuovi_positivi
 2020-11-01,casteldaccia,1
 2020-11-02,casteldaccia,4
 2020-11-03,casteldaccia,0
-2020-11-04,casteldaccia,3
+2020-11-04,casteldaccia,4
 2020-11-05,casteldaccia,2
 2020-11-06,casteldaccia,1
 2020-11-07,casteldaccia,1
@@ -188,3 +188,4 @@ data,comune,nuovi_positivi
 2021-03-28,casteldaccia,0
 2021-03-29,casteldaccia,0
 2021-03-30,casteldaccia,0
+2021-03-31,casteldaccia,4
