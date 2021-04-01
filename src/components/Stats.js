@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Row, Col, Card } from "react-bootstrap";
+import { format } from "date-fns";
 
 export default class Stats extends Component{
     render(){ 
@@ -24,6 +25,7 @@ export default class Stats extends Component{
         return(
             <Fragment>
                 <div className="pt--20 ptb--20">
+                    <div className="ptb--20 bold">Ultimo aggiornamento: {this.props.lastUpdate}</div>
                     <Row>
                     {dati.map((value , index) => (
                         <Col xl={3} lg={6} key={index}>

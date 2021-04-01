@@ -57,6 +57,7 @@ export default class Dashboard extends Component {
       var city = (data[i][3]).toString();
       if(city === this.props.cityName){
         this.setState({
+          lastUpdate: format(new Date(data[i][0]), "dd/MM/yyyy"),
           attuali: data[i][10],
           ricoverati: data[i][8],
           guariti: data[i][13],
@@ -86,7 +87,7 @@ export default class Dashboard extends Component {
               <br />
             </Container>
           </Row>
-          <Stats attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti}/>
+          <Stats lastUpdate={this.state.lastUpdate} attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti}/>
           <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
           <h3 className="pt--10 ptb--20">
             Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
