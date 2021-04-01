@@ -88,10 +88,14 @@ export default class Dashboard extends Component {
             </Container>
           </Row>
           <Stats lastUpdate={this.state.lastUpdate} attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti}/>
-          <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
-          <h3 className="pt--10 ptb--20">
-            Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
-          </h3>
+          <div className="pt--10 ptb--20">
+            <h3>
+              Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
+            </h3>
+            <h6>
+              <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
+            </h6>
+          </div>
           <Chart url={this.state.daySet} />
           <Row>
             <Col xs={12} className="pt--0 ptb--30">

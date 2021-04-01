@@ -23,7 +23,7 @@ export default class Stats extends Component{
         ]
         return(
             <Fragment>
-                <div className="pt--20 ptb--20">
+                <div className="pt--10 ptb--20">
                     <div className="ptb--20 bold">Ultimo aggiornamento: {this.props.lastUpdate}</div>
                     <Row>
                     {dati.map((value , index) => (
