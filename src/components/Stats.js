@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { Row, Col, Card } from "react-bootstrap";
-import { format } from "date-fns";
 
 export default class Stats extends Component{
     render(){ 
