@@ -17,11 +17,11 @@ data,comune,nuovi_positivi
 2020-10-21,bagheria,1
 2020-10-22,bagheria,5
 2020-10-23,bagheria,5
-2020-10-24,bagheria,11
+2020-10-24,bagheria,13
 2020-10-25,bagheria,3
 2020-10-26,bagheria,22
 2020-10-27,bagheria,15
-2020-10-28,bagheria,13
+2020-10-28,bagheria,14
 2020-10-29,bagheria,12
 2020-10-30,bagheria,5
 2020-10-31,bagheria,8
@@ -38,7 +38,7 @@ data,comune,nuovi_positivi
 2020-11-11,bagheria,53
 2020-11-12,bagheria,14
 2020-11-13,bagheria,21
-2020-11-14,bagheria,21
+2020-11-14,bagheria,22
 2020-11-15,bagheria,39
 2020-11-16,bagheria,8
 2020-11-17,bagheria,14
@@ -142,7 +142,7 @@ data,comune,nuovi_positivi
 2021-02-23,bagheria,1
 2021-02-24,bagheria,3
 2021-02-25,bagheria,3
-2021-02-26,bagheria,0
+2021-02-26,bagheria,1
 2021-02-27,bagheria,4
 2021-02-28,bagheria,2
 2021-03-01,bagheria,1
@@ -167,10 +167,12 @@ data,comune,nuovi_positivi
 2021-03-20,bagheria,2
 2021-03-21,bagheria,0
 2021-03-22,bagheria,5
-2021-03-23,bagheria,28
+2021-03-23,bagheria,29
 2021-03-24,bagheria,11
 2021-03-25,bagheria,9
 2021-03-26,bagheria,3
-2021-03-27,bagheria,14
+2021-03-27,bagheria,15
 2021-03-28,bagheria,0
 2021-03-29,bagheria,6
+2021-03-30,bagheria,12
+2021-03-31,bagheria,1
