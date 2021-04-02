@@ -1,7 +1,7 @@
 library(ggplot2)
 library(EpiEstim)
 
-scope <- "bagheria"
+scopes <- c("bagheria","santaflavia","ficarazzi","casteldaccia","altavilla")
 options(max.print=1235813)
 
 #R you're lame.
@@ -12,6 +12,8 @@ options(max.print=1235813)
     base::`+`(a, b)
   }
 }
+
+for(scope in scopes){
 
 #CARICAMENTO DATASET SETTIMANALE
 bag <- read.csv('../public/datasets/'+scope+'/1w_'+scope+'.csv')
@@ -44,16 +46,11 @@ bag_R_mean <- bag_R$R$`Mean(R)`
 
 ER<-round(tail(bag_R_mean,1), digits = 2)
 print("Stima R per "+scope+": "+ER)
+}
 
 #GRAFICO INCIDENZA SETTIMANALE
-ggplot(data = bag_w, aes(x = data, y = nuovi_positivi)) +
-  geom_bar(stat = "identity", fill = "#878dff") +
-  labs(title = "Incidenza settimanale COVID19 a "+scope,
-       subtitle = "Stima R: "+ER,
-       x = "Data", y = "Numero nuovi positivi")
-
-#ALTRO...
-#plot(bag_R)
-#plot(bag_R, "R")
-#print(bag_R$R)
-#print(bag_R$R$`Mean(R)`)
+#ggplot(data = bag_w, aes(x = data, y = nuovi_positivi)) +
+#  geom_bar(stat = "identity", fill = "#878dff") +
+#  labs(title = "Incidenza settimanale COVID19 a "+scope,
+#       subtitle = "Stima R: "+ER,
+#       x = "Data", y = "Numero nuovi positivi")
