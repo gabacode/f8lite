@@ -4,7 +4,7 @@ library(EpiEstim)
 scopes <- c("bagheria","santaflavia","ficarazzi","casteldaccia","altavilla")
 options(max.print=1235813)
 
-#R you're lame.
+#concat
 `+` <- function(a, b) {
   if (is.character(a) | is.character(b)) {
     paste0(a, b)
