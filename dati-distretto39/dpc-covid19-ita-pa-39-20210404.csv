@@ -1,0 +1,6 @@
+data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
+2021-04-04T18:50:49.677Z,39,82006,Bagheria,38.078918,13.512364999999999,,,14,201,215,-1,0,2033,85,2333,4627,2333,,,,
+2021-04-04T18:50:49.677Z,39,82067,Santa Flavia,38.08246,13.52758,,,2,87,89,-4,0,559,12,660,1391,660,,,,
+2021-04-04T18:50:49.677Z,39,82035,Ficarazzi,38.089272,13.46891,,,9,82,91,0,0,538,4,633,1314,633,,,,
+2021-04-04T18:50:49.677Z,39,82023,Casteldaccia,38.05373,13.52967,,,4,31,35,-4,0,352,15,402,818,402,,,,
+2021-04-04T18:50:49.677Z,39,82004,Altavilla Milicia,38.0421,13.549009999999999,,,2,69,71,-2,0,304,10,385,793,385,,,,
