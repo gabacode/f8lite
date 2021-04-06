@@ -57,7 +57,7 @@ export default class Dashboard extends Component {
       var city = (data[i][3]).toString();
       if(city === this.props.cityName){
         this.setState({
-          lastUpdate: format(new Date(data[i][0]), "dd/MM/yyyy"),
+          lastUpdate: format(new Date(data[i][0]), "dd/MM/yyyy @ HH:mm:ss"),
           attuali: data[i][10],
           ricoverati: data[i][8],
           guariti: data[i][13],
