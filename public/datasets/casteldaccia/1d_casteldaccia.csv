@@ -163,7 +163,7 @@ data,comune,nuovi_positivi
 2021-03-03,casteldaccia,0
 2021-03-04,casteldaccia,1
 2021-03-05,casteldaccia,2
-2021-03-06,casteldaccia,0
+2021-03-06,casteldaccia,1
 2021-03-07,casteldaccia,0
 2021-03-08,casteldaccia,0
 2021-03-09,casteldaccia,8
@@ -191,3 +191,6 @@ data,comune,nuovi_positivi
 2021-03-31,casteldaccia,4
 2021-04-01,casteldaccia,1
 2021-04-02,casteldaccia,1
+2021-04-03,casteldaccia,2
+2021-04-04,casteldaccia,0
+2021-04-05,casteldaccia,1
