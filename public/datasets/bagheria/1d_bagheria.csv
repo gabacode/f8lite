@@ -34,7 +34,7 @@ data,comune,nuovi_positivi
 2020-11-07,bagheria,21
 2020-11-08,bagheria,5
 2020-11-09,bagheria,43
-2020-11-10,bagheria,10
+2020-11-10,bagheria,11
 2020-11-11,bagheria,53
 2020-11-12,bagheria,14
 2020-11-13,bagheria,21
@@ -179,5 +179,8 @@ data,comune,nuovi_positivi
 2021-04-01,bagheria,21
 2021-04-02,bagheria,13
 2021-04-03,bagheria,10
-2021-04-04,bagheria,0
-2021-04-05,bagheria,2
+2021-04-04,bagheria,3
+2021-04-05,bagheria,4
+2021-04-06,bagheria,26
+2021-04-07,bagheria,1
+2021-04-08,bagheria,2
