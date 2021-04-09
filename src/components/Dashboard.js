@@ -62,7 +62,10 @@ export default class Dashboard extends Component {
           ricoverati: data[i][8],
           guariti: data[i][13],
           deceduti: data[i][14],
-          // totali: data[i][15],
+          nuovi_positivi: data[i][12],
+          variazione: data[i][11],
+          totale_casi: data[i][15],
+          tamponi: data[i][16],
         });
       }else{
         //pass
@@ -87,7 +90,7 @@ export default class Dashboard extends Component {
               <br />
             </Container>
           </Row>
-          <Stats lastUpdate={this.state.lastUpdate} attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti}/>
+          <Stats lastUpdate={this.state.lastUpdate} attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti} nuovi_positivi={this.state.nuovi_positivi} variazione={this.state.variazione} totale_casi={this.state.totale_casi} tamponi={this.state.tamponi}/>
           <div className="pt--10 ptb--20">
             <h3>
               Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}

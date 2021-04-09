@@ -20,6 +20,22 @@ export default class Stats extends Component{
                 titolo: "Deceduti",
                 data: this.props.deceduti,
             },
+            {
+                titolo: "Nuovi Positivi",
+                data: this.props.nuovi_positivi,
+            },
+            {
+                titolo: "Variazione Attuali",
+                data: this.props.variazione,
+            },
+            {
+                titolo: "Tamponi",
+                data: this.props.tamponi,
+            },
+            {
+                titolo: "Totale Casi",
+                data: this.props.totale_casi,
+            },
         ]
         return(
             <Fragment>
@@ -28,7 +44,7 @@ export default class Stats extends Component{
                     <Row>
                     {dati.map((value , index) => (
                         <Col xl={3} lg={6} key={index}>
-                            <Card className="mb-4 mb-xl-0">
+                            <Card className="mb-4 mb-xl-2">
                                 <Card.Body>
                                     <Row>
                                         <Col>
