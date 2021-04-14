@@ -1,4 +1,5 @@
 import sys
+import math
 import pandas as pd
 from datetime import datetime, timedelta
 '''
@@ -37,11 +38,13 @@ dft["variazione_totale_positivi"] = dft["totale_positivi"] - dfy["totale_positiv
 print(dft["nuovi_positivi"])
 print(dft["variazione_totale_positivi"])
 
+dft[['lat','long']] = dft[['lat','long']].round(decimals=6)
+
 choice = input("\nVuoi esportare? y/n\n")
 if choice == "y":
-    dft.to_csv(path+"-"+today+'.csv',index = None,float_format='%f')
-    dft.to_csv(path+'.csv', mode = 'a', index = None, header = False,float_format='%f')
-    dft.to_csv(path+"-"+'latest.csv',index = None,float_format='%f')
+    dft.to_csv(path+"-"+today+'.csv',index = None)
+    dft.to_csv(path+'.csv', mode = 'a', index = None, header = False)
+    dft.to_csv(path+"-"+'latest.csv',index = None)
     print("Fatto!")
 else:
     print("Ok, magari un'altra volta, ciao!")
