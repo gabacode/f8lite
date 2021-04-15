@@ -16,7 +16,7 @@ export default class Menu extends Component{
                         <Nav.Link className="active" href="/altavilla">Altavilla Milicia</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Button size="sm" href="https://github.com/gabacode/f8lite" target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" href="https://github.com/gabacode/f8lite/blob/main/README.md" target="_blank" rel="noopener noreferrer">
                             <FaGithub />
                         </Button>
                     </Nav>

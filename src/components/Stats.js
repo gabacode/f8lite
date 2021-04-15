@@ -40,7 +40,7 @@ export default class Stats extends Component{
         return(
             <Fragment>
                 <div className="pt--10 ptb--20">
-                    <Button size="sm" href="https://github.com/gabacode/f8lite/tree/main/dati-distretto39" target="_blank">
+                    <Button size="sm" href="https://github.com/gabacode/f8lite/tree/main/dati-comuni" target="_blank">
                         Accesso Dati
                     </Button>
                     <div className="ptb--20 bold">Ultimo aggiornamento: {this.props.lastUpdate}</div>
