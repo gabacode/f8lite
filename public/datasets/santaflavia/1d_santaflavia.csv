@@ -162,7 +162,7 @@ data,comune,nuovi_positivi
 2021-03-19,santa flavia,0
 2021-03-20,santa flavia,0
 2021-03-21,santa flavia,1
-2021-03-22,santa flavia,5
+2021-03-22,santa flavia,7
 2021-03-23,santa flavia,0
 2021-03-24,santa flavia,5
 2021-03-25,santa flavia,11
@@ -183,3 +183,5 @@ data,comune,nuovi_positivi
 2021-04-09,santa flavia,5
 2021-04-10,santa flavia,6
 2021-04-11,santa flavia,4
+2021-04-12,santa flavia,2
+2021-04-13,santa flavia,3
