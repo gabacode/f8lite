@@ -6,8 +6,17 @@ Ogni giorno, a fine giornata, verrà aggiornato il file più recente a [questo l
 
 I [dati grezzi](https://github.com/gabacode/f8lite/tree/main/public/datasets), raggruppati per data tampone, calcolano invece l'incidenza giornaliera e l'indice 250, e potrebbero rivelarsi più attendibili per il calcolo effettivo dei nuovi_positivi giornalieri. [In attesa di delucidazioni e consigli da parte del DPC](https://github.com/pcm-dpc/COVID-19/issues/1123), entrambe le tipologie di dati sono rese disponibili.
 
+I dati in formato open data, alimentano delle Dashboard sviluppate da [Dennis Angemi](dennisangemi) e sono disponibili per i seguenti paesi:
+* [Bagheria](https://bit.ly/dashboardbagheria)
+* [Santa Flavia](https://bit.ly/dashboardsantaflavia)
+* [Ficarazzi](https://bit.ly/dashboardficarazzi)
+* [Casteldaccia](https://bit.ly/dashboardcasteldaccia)
+* [Altavilla Milicia](https://bit.ly/dashboardaltavillamilicia)
+
+I dati sono inoltre accessibili tramite [Bot Telegram](https://t.me/Covid_19_Sicilia_Bot) grazie al lavoro di [Giovanni Pirrotta](https://github.com/gpirrotta).
+
 Nonostante l’ impegno a mantenere accurati i contenuti del Sito, le informazioni fornite possono presentare inaccuratezze tecniche o errori tipografici. Essendo tutte le informazioni di questo Sito soggette a modifiche/aggiornamenti periodici, esse sono fornite senza alcuna garanzia, implicita o esplicita, di qualsiasi tipo.
 
-## Open Source
+## Credits
 
-Se vuoi partecipare a questo progetto, sentiti liberi di farlo, pushando su questo repo.
+Vincenzo Martorana - Emanuele Calì - [open data Sicilia](http://opendatasicilia.it)
