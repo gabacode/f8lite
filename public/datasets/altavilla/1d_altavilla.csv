@@ -181,7 +181,7 @@ data,comune,nuovi_positivi
 2021-03-22,altavilla milicia,1
 2021-03-23,altavilla milicia,3
 2021-03-24,altavilla milicia,4
-2021-03-25,altavilla milicia,0
+2021-03-25,altavilla milicia,1
 2021-03-26,altavilla milicia,2
 2021-03-27,altavilla milicia,2
 2021-03-28,altavilla milicia,1
@@ -201,3 +201,5 @@ data,comune,nuovi_positivi
 2021-04-11,altavilla milicia,1
 2021-04-12,altavilla milicia,0
 2021-04-13,altavilla milicia,1
+2021-04-14,altavilla milicia,2
+2021-04-15,altavilla milicia,1
