@@ -1,6 +1,6 @@
 data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-04-15,39,82006,Bagheria,38.078918,13.512365,,,7,272,279,41,44,2107,106,2492,4938,2492,,,,
-2021-04-15,39,82067,Santa Flavia,38.08246,13.52758,,,2,82,84,7,7,598,14,696,1490,696,,,,
-2021-04-15,39,82035,Ficarazzi,38.089272,13.46891,,,10,75,85,-6,2,581,4,670,1399,670,,,,
-2021-04-15,39,82023,Casteldaccia,38.05373,13.52967,,,4,40,44,9,9,367,16,427,874,427,,,,
-2021-04-15,39,82004,Altavilla Milicia,38.0421,13.54901,,,3,46,49,3,3,339,11,399,840,399,,,,
+2021-04-15,39,82006,Bagheria,38.078918,13.512365,,,7,285,292,54,65,2115,106,2513,4974,2513,,,,
+2021-04-15,39,82067,Santa Flavia,38.08246,13.52758,,,2,75,77,0,7,605,14,696,1497,696,,,,
+2021-04-15,39,82035,Ficarazzi,38.089272,13.46891,,,10,76,86,-5,3,581,4,671,1403,671,,,,
+2021-04-15,39,82023,Casteldaccia,38.05373,13.52967,,,4,37,41,6,9,370,16,427,874,427,,,,
+2021-04-15,39,82004,Altavilla Milicia,38.0421,13.54901,,,3,46,49,3,5,341,11,401,848,401,,,,
