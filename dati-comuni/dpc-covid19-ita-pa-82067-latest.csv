@@ -1,2 +1,2 @@
 data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-04-14,39,82067,Santa Flavia,38.08246,13.52758,,,2,75,77,0,0,598,14,689,1473,689,,,,
+2021-04-15,39,82067,Santa Flavia,38.08246,13.52758,,,2,82,84,7,7,598,14,696,1490,696,,,,
