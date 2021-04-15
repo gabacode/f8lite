@@ -6,7 +6,7 @@ Ogni giorno, a fine giornata, verrà aggiornato il file più recente a [questo l
 
 I [dati grezzi](https://github.com/gabacode/f8lite/tree/main/public/datasets), raggruppati per data tampone, calcolano invece l'incidenza giornaliera e l'indice 250, e potrebbero rivelarsi più attendibili per il calcolo effettivo dei nuovi_positivi giornalieri. [In attesa di delucidazioni e consigli da parte del DPC](https://github.com/pcm-dpc/COVID-19/issues/1123), entrambe le tipologie di dati sono rese disponibili.
 
-I dati in formato open data, alimentano delle Dashboard sviluppate da [Dennis Angemi](dennisangemi) e sono disponibili per i seguenti paesi:
+I dati in formato open data, alimentano delle Dashboard sviluppate da [Dennis Angemi](https://github.com/dennisangemi) e sono disponibili per i seguenti paesi:
 * [Bagheria](https://bit.ly/dashboardbagheria)
 * [Santa Flavia](https://bit.ly/dashboardsantaflavia)
 * [Ficarazzi](https://bit.ly/dashboardficarazzi)
