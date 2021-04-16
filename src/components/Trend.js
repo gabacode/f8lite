@@ -8,6 +8,10 @@ export default class Trend extends Component {
     var lastWeek = this.props.lw;
     var thisWeek = this.props.tw;
     var trend = thisWeek/lastWeek;
+    var value = trend;
+    if (trend>=2){
+      value = 2;
+    }
     return (
       <Fragment>
         <div className="pt--20">
@@ -25,7 +29,7 @@ export default class Trend extends Component {
           <ReactSpeedometer
             minValue={0}
             maxValue={2}
-            value={trend}
+            value={value}
             segments={5555}
             maxSegmentLabels={0}
             startColor="green"
