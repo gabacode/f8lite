@@ -1,2 +1,2 @@
 data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-04-16,39,82004,Altavilla Milicia,38.0421,13.54901,,,3,46,49,0,0,341,11,401,848,401,,,,
+2021-04-17,39,82004,Altavilla Milicia,38.0421,13.54901,,,3,44,47,-2,0,343,11,401,848,401,,,,
