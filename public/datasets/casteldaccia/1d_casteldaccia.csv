@@ -33,7 +33,7 @@ data,comune,nuovi_positivi
 2020-10-24,casteldaccia,2
 2020-10-25,casteldaccia,1
 2020-10-26,casteldaccia,2
-2020-10-27,casteldaccia,3
+2020-10-27,casteldaccia,2
 2020-10-28,casteldaccia,0
 2020-10-29,casteldaccia,8
 2020-10-30,casteldaccia,2
@@ -60,7 +60,7 @@ data,comune,nuovi_positivi
 2020-11-20,casteldaccia,1
 2020-11-21,casteldaccia,5
 2020-11-22,casteldaccia,24
-2020-11-23,casteldaccia,3
+2020-11-23,casteldaccia,2
 2020-11-24,casteldaccia,1
 2020-11-25,casteldaccia,3
 2020-11-26,casteldaccia,12
@@ -72,7 +72,7 @@ data,comune,nuovi_positivi
 2020-12-02,casteldaccia,0
 2020-12-03,casteldaccia,1
 2020-12-04,casteldaccia,0
-2020-12-05,casteldaccia,3
+2020-12-05,casteldaccia,2
 2020-12-06,casteldaccia,0
 2020-12-07,casteldaccia,1
 2020-12-08,casteldaccia,0
@@ -203,3 +203,6 @@ data,comune,nuovi_positivi
 2021-04-12,casteldaccia,2
 2021-04-13,casteldaccia,9
 2021-04-14,casteldaccia,0
+2021-04-15,casteldaccia,9
+2021-04-16,casteldaccia,0
+2021-04-17,casteldaccia,16
