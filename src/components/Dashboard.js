@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { readRemoteFile } from "react-papaparse";
 import { format } from "date-fns";
+import ReactTooltip from "react-tooltip";
+import { FaQuestionCircle } from 'react-icons/fa';
 import Stats from "./Stats";
 import Chart from "./Chart";
 import Redzone from "./Redzone";
@@ -18,7 +20,7 @@ export default class Dashboard extends Component {
       scope: this.props.scope,
       cityName: this.props.cityName,
       pop: this.props.pop,
-      daySet: "../datasets/"+this.props.scope+"/1d_"+this.props.scope+".csv",
+      daySet: "../datasets/1d_"+this.props.scope+".csv",
       latest: "https://raw.githubusercontent.com/gabacode/f8lite/main/dati-distretto39/dpc-covid19-ita-pa-39-latest.csv",
     };
   }
@@ -44,6 +46,7 @@ export default class Dashboard extends Component {
     var tw = wv.slice(-8).slice(0, -1).reduce((a, b) => a + b);
     var lw = wv.slice(-15).slice(0, -8).reduce((a, b) => a + b);
     this.setState({
+      firstDay: format(new Date(data[1][0]), "dd/MM/yyyy"),
       lastDay: data[l-2][0],
       lastWeek: parseInt(lw),
       thisWeek: parseInt(tw),
@@ -94,12 +97,30 @@ export default class Dashboard extends Component {
           <div className="pt--10 ptb--20">
             <h3>
               Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
+              <span data-tip data-for="incInfo">
+                &nbsp;<FaQuestionCircle />
+              </span>
             </h3>
+                <ReactTooltip id="incInfo" place="right" effect="solid" type="info">
+                  Dati calcolati per date dei primi tamponi positivi (dt1, et1=Positivo) a partire dal {this.state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
+                </ReactTooltip>
             <h6>
               <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
             </h6>
+            <Chart containerId="pos_chart" url={this.state.daySet} mode="nuovi_positivi" label="Positivi"/>
           </div>
-          <Chart url={this.state.daySet} />
+          {/* <div>
+            <h3>
+                Decessi al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
+                <span data-tip data-for="decInfo">
+                &nbsp;<FaQuestionCircle />
+                </span>
+            </h3>
+                <ReactTooltip id="decInfo" place="right" effect="solid" type="info">
+                  Dati calcolati per data di decesso (ddec, stato=Deceduto) a partire dal {this.state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
+                </ReactTooltip>
+            <Chart containerId="dec_chart" url={this.state.daySet} mode="deceduti" label="Decessi"/>
+          </div> */}
           <Row>
             <Col xs={12} className="pt--0 ptb--30">
               <Button size="sm" href={this.state.daySet}>

@@ -4,14 +4,9 @@ import {createChart} from "lightweight-charts";
 
 export default class Chart extends Component{
 
-    static defaultProps = {
-		containerId: 'pos_chart',
-	};
-
     chart = null;
 
     componentDidMount(){
-
         var width = 960;
         var height = 300;
 
@@ -19,8 +14,8 @@ export default class Chart extends Component{
             width: width,
             height: height,
             layout: {
-                textColor: '#000',
-                backgroundColor: '#fff',
+                textColor: '#333',
+                backgroundColor: '#fefefe',
             },
         });
 
@@ -29,12 +24,20 @@ export default class Chart extends Component{
             header: true,
             download: true,
             complete: (results) => {
-                results.data.map((dt) => {
-                    if (dt.data) {
-                        dayData.push({
-                            time: dt.data,
-                            value: parseFloat(dt.nuovi_positivi),
-                        });
+                results.data.map((dt) => {                    
+                    if (dt.data){
+                        if(this.props.mode==="nuovi_positivi"){
+                            dayData.push({
+                                time: dt.data,
+                                value: parseFloat(dt.nuovi_positivi),
+                            });
+                        }
+                        if(this.props.mode==="deceduti"){
+                            dayData.push({
+                                time: dt.data,
+                                value: parseFloat(dt.deceduti),
+                            });
+                        }
                     }
                     return dayData;
                 });
@@ -77,18 +80,20 @@ export default class Chart extends Component{
 
         var legend = document.createElement('div');
         legend.className = 'sma-legend';
-        document.getElementById("pos_chart").appendChild(legend);
+        document.getElementById(this.props.containerId).appendChild(legend);
 
         var smalegend = document.createElement('div');
         smalegend.className = 'sma-legend';
-        document.getElementById("pos_chart").appendChild(smalegend);
+        document.getElementById(this.props.containerId).appendChild(smalegend);
+
+        var label = this.props.label;
 
         function setPosText(posVal) {
             let val = 'n/a';
             if (posVal !== undefined) {
                 val = posVal;
             }
-            legend.innerHTML = 'Positivi: <span style="color:rgba(44, 130, 201, 1)">' + val + '</span>';
+            legend.innerHTML = label+': <span style="color:rgba(44, 130, 201, 1)">' + val + '</span>';
         }
         function setMAText(smaVal) {
             let val = 'n/a';
@@ -119,14 +124,14 @@ export default class Chart extends Component{
         }
 
         new ResizeObserver(entries => {
-            if (entries.length === 0 || entries[0].target !== document.getElementById('pos_chart')) {
+            if (entries.length === 0 || entries[0].target !== document.getElementById(this.props.containerId)) {
                 return;
             }
             const newRect = entries[0].contentRect;
             chart.applyOptions({
                 width: newRect.width
             });
-        }).observe(document.getElementById('pos_chart'));
+        }).observe(document.getElementById(this.props.containerId));
 
     }
   componentWillUnmount() {
@@ -138,10 +143,7 @@ export default class Chart extends Component{
 
 render() {
     return (
-        <div
-            id={ this.props.containerId }
-            className={ 'LightweightChart' }
-        />
+        <div id={this.props.containerId}/>
     );
 }
 }

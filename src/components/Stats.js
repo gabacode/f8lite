@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
+import ReactTooltip from "react-tooltip";
+import { FaQuestionCircle } from 'react-icons/fa';
 
 export default class Stats extends Component{
     render(){ 
@@ -43,7 +45,15 @@ export default class Stats extends Component{
                     <Button size="sm" href="https://github.com/gabacode/f8lite/tree/main/dati-comuni" target="_blank">
                         Accesso Dati
                     </Button>
-                    <div className="ptb--20 bold">Ultimo aggiornamento: {this.props.lastUpdate}</div>
+                    <div className="ptb--20 bold">
+                        Ultimo aggiornamento: {this.props.lastUpdate}
+                        <span data-tip data-for="globInfo">
+                            &nbsp;<FaQuestionCircle />
+                        </span>
+                    </div>
+                    <ReactTooltip id="globInfo" place="right" effect="solid" type="info">
+                        Dati calcolati per data di inserimento e aggiornati quotidianamente, a fine giornata.
+                    </ReactTooltip>
                     <Row>
                     {dati.map((value , index) => (
                         <Col xl={3} lg={6} key={index}>
