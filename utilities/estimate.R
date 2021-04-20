@@ -1,6 +1,5 @@
 library(ggplot2)
 library(EpiEstim)
-suppressPackageStartupMessages()
 
 scopes <- c("bagheria","santa_flavia","ficarazzi","casteldaccia","altavilla_milicia")
 options(max.print=1235813)
