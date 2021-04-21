@@ -1,2 +1,2 @@
 data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-04-20,39,82035,Ficarazzi,38.089272,13.46891,,,9,58,67,0,3,610,4,681,1449,681,,,,
+2021-04-21,39,82035,Ficarazzi,38.089272,13.46891,,,9,61,70,3,8,615,4,689,1461,689,,,,
