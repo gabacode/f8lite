@@ -1,2 +1,2 @@
 data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-04-22,39,82023,Casteldaccia,38.05373,13.52967,,,5,55,60,1,4,380,16,456,920,456,,,,
+2021-04-23,39,82023,Casteldaccia,38.05373,13.52967,,,5,70,75,15,16,381,16,472,936,472,,,,
