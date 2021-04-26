@@ -1,2 +1,2 @@
 data,distretto,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-04-25,39,82006,Bagheria,38.078918,13.512365,,,11,405,416,0,2,2190,106,2712,5344,2712,,,,
+2021-04-26,39,82006,Bagheria,38.078918,13.512365,,,11,435,446,30,37,2197,106,2749,5432,2749,,,,
