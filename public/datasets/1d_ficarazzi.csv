@@ -188,7 +188,7 @@ data,comune,nuovi_positivi,deceduti
 2021-03-13,Ficarazzi,6,0
 2021-03-14,Ficarazzi,0,0
 2021-03-15,Ficarazzi,0,0
-2021-03-16,Ficarazzi,1,0
+2021-03-16,Ficarazzi,1,1
 2021-03-17,Ficarazzi,6,0
 2021-03-18,Ficarazzi,5,0
 2021-03-19,Ficarazzi,3,0
@@ -202,7 +202,7 @@ data,comune,nuovi_positivi,deceduti
 2021-03-27,Ficarazzi,11,0
 2021-03-28,Ficarazzi,0,0
 2021-03-29,Ficarazzi,3,0
-2021-03-30,Ficarazzi,4,0
+2021-03-30,Ficarazzi,4,1
 2021-03-31,Ficarazzi,2,0
 2021-04-01,Ficarazzi,11,0
 2021-04-02,Ficarazzi,2,0
@@ -220,12 +220,13 @@ data,comune,nuovi_positivi,deceduti
 2021-04-14,Ficarazzi,3,0
 2021-04-15,Ficarazzi,4,0
 2021-04-16,Ficarazzi,2,0
-2021-04-17,Ficarazzi,2,0
+2021-04-17,Ficarazzi,1,0
 2021-04-18,Ficarazzi,1,0
 2021-04-19,Ficarazzi,2,0
 2021-04-20,Ficarazzi,8,0
 2021-04-21,Ficarazzi,10,0
 2021-04-22,Ficarazzi,1,0
 2021-04-23,Ficarazzi,0,0
-2021-04-24,Ficarazzi,3,0
+2021-04-24,Ficarazzi,4,0
 2021-04-25,Ficarazzi,2,0
+2021-04-26,Ficarazzi,2,1
