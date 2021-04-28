@@ -183,7 +183,7 @@ data,comune,nuovi_positivi,deceduti
 2021-04-13,Santa Flavia,7,0
 2021-04-14,Santa Flavia,0,0
 2021-04-15,Santa Flavia,2,0
-2021-04-16,Santa Flavia,0,0
+2021-04-16,Santa Flavia,1,0
 2021-04-17,Santa Flavia,8,0
 2021-04-18,Santa Flavia,0,0
 2021-04-19,Santa Flavia,1,1
@@ -194,3 +194,4 @@ data,comune,nuovi_positivi,deceduti
 2021-04-24,Santa Flavia,1,0
 2021-04-25,Santa Flavia,0,1
 2021-04-26,Santa Flavia,2,0
+2021-04-27,Santa Flavia,1,0
