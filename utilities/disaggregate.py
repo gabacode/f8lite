@@ -1,8 +1,11 @@
 import pandas as pd
 
 input = '../dati-distretto39/dpc-covid19-ita-pa-39.csv'
-df = pd.read_csv(input)
-keys = [82006,82067,82035,82023,82004]
+df = pd.read_csv(input, converters={'codice_comune': '{:0>6}'.format})
+keys = ["082006","082067","082035","082023","082004"]
+
+df.rename(columns = {'distretto':'sigla_provincia'}, inplace = True)
+df['sigla_provincia'] = "PA"
 
 df['data'] = df['data'].str.slice(0,10)
 df[['lat','long']] = df[['lat','long']].round(decimals=6)
