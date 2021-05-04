@@ -128,3 +128,4 @@ data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_
 2021-05-01,PA,082004,Altavilla Milicia,38.0421,13.54901,,,3,56,59,2,2,365,12,436,922,436,,,,
 2021-05-02,PA,082004,Altavilla Milicia,38.0421,13.54901,,,3,57,60,1,1,365,12,437,923,437,,,,
 2021-05-03,PA,082004,Altavilla Milicia,38.0421,13.54901,,,3,56,59,-1,0,366,12,437,928,437,,,,
+2021-05-04,PA,082004,Altavilla Milicia,38.0421,13.54901,,,3,54,57,-2,0,368,12,437,929,437,,,,
