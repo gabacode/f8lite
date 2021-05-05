@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Menu from './components/Menu';
 import Dashboard from './components/Dashboard';
 
-const bagheria = ["Bagheria","bagheria",53714];
-const sflavia = ["Santa Flavia","santa_flavia",11026]
-const ficarazzi = ["Ficarazzi","ficarazzi",12604]
-const casteldaccia = ["Casteldaccia","casteldaccia",11384]
-const altavilla = ["Altavilla Milicia","altavilla_milicia",8342]
+const bagheria = ["Bagheria","bagheria",53149];
+const sflavia = ["Santa Flavia","santa_flavia",10952]
+const ficarazzi = ["Ficarazzi","ficarazzi",12763]
+const casteldaccia = ["Casteldaccia","casteldaccia",11543]
+const altavilla = ["Altavilla Milicia","altavilla_milicia",8452]
 
 export default function App() {
   return (
