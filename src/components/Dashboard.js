@@ -109,7 +109,7 @@ export default class Dashboard extends Component {
             </h6>
             <Chart containerId="pos_chart" url={this.state.daySet} mode="nuovi_positivi" label="Positivi"/>
           </div>
-          {/* <div>
+          <div>
             <h3>
                 Decessi al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
                 <span data-tip data-for="decInfo">
@@ -120,7 +120,7 @@ export default class Dashboard extends Component {
                   Dati calcolati per data di decesso (ddec, stato=Deceduto) a partire dal {this.state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
                 </ReactTooltip>
             <Chart containerId="dec_chart" url={this.state.daySet} mode="deceduti" label="Decessi"/>
-          </div> */}
+          </div>
           <Row>
             <Col xs={12} className="pt--0 ptb--30">
               <Button size="sm" href={this.state.daySet}>
