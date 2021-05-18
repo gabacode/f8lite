@@ -13,8 +13,7 @@ folders = ['input','output']
 
 for folder in folders:
     try:
-        os.makedirs('../output')
-        os.makedirs('../input')
+        os.makedirs('../'+folder)
     except Exception as e:
         print(e)
 
