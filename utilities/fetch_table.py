@@ -9,11 +9,14 @@ dt1  = "Data primo tampone"
 et1  = "Esito primo tampone"
 ddec = "Data decesso"
 '''
-try:
-    os.makedirs('../output')
-    os.makedirs('../input')
-except:
-    pass
+folders = ['input','output']
+
+for folder in folders:
+    try:
+        os.makedirs('../output')
+        os.makedirs('../input')
+    except Exception as e:
+        print(e)
 
 print("Caricamento dati...")
 url = '../input/positivi.csv'

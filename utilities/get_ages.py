@@ -11,12 +11,13 @@ now = pd.Timestamp('now')
 nowstr = now.strftime('%Y-%m-%d')
 newFile = False
 
-try:
-    os.makedirs('../output')
-    os.makedirs('../input')
-    os.makedirs('../public/datasets/byAge')
-except:
-    pass
+folders = ['input','output','public/datasets/byAge']
+
+for folder in folders:
+    try:
+        os.makedirs('../'+folder)
+    except Exception as e:
+        print(e)
 
 print("Caricamento dati...")
 url = '../input/positivi.csv'
