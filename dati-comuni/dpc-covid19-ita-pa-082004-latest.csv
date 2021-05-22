@@ -1,2 +1,2 @@
 data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-05-21,PA,082004,Altavilla Milicia,38.0421,13.54901,,,1,38,39,-2,0,398,12,449,976,449,,,,
+2021-05-22,PA,082004,Altavilla Milicia,38.0421,13.54901,,,1,39,40,1,1,398,12,450,979,450,,,,
