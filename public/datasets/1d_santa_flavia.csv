@@ -72,7 +72,7 @@ data,comune,nuovi_positivi,deceduti
 2020-12-23,Santa Flavia,12,0
 2020-12-24,Santa Flavia,7,0
 2020-12-25,Santa Flavia,2,0
-2020-12-26,Santa Flavia,6,0
+2020-12-26,Santa Flavia,5,0
 2020-12-27,Santa Flavia,3,1
 2020-12-28,Santa Flavia,8,0
 2020-12-29,Santa Flavia,1,0
@@ -140,7 +140,7 @@ data,comune,nuovi_positivi,deceduti
 2021-03-01,Santa Flavia,3,0
 2021-03-02,Santa Flavia,0,0
 2021-03-03,Santa Flavia,1,0
-2021-03-04,Santa Flavia,0,0
+2021-03-04,Santa Flavia,0,1
 2021-03-05,Santa Flavia,0,0
 2021-03-06,Santa Flavia,5,0
 2021-03-07,Santa Flavia,0,0
@@ -148,7 +148,7 @@ data,comune,nuovi_positivi,deceduti
 2021-03-09,Santa Flavia,4,0
 2021-03-10,Santa Flavia,7,0
 2021-03-11,Santa Flavia,7,0
-2021-03-12,Santa Flavia,3,0
+2021-03-12,Santa Flavia,4,0
 2021-03-13,Santa Flavia,2,0
 2021-03-14,Santa Flavia,0,0
 2021-03-15,Santa Flavia,0,0

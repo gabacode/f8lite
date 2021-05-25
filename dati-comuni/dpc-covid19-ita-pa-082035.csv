@@ -149,3 +149,4 @@ data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_
 2021-05-22,PA,082035,Ficarazzi,38.089272,13.46891,,,6,27,33,0,0,704,9,746,1644,746,,,,
 2021-05-23,PA,082035,Ficarazzi,38.089272,13.46891,,,6,27,33,0,0,704,9,746,1645,746,,,,
 2021-05-24,PA,082035,Ficarazzi,38.089272,13.46891,,,6,21,27,-6,0,710,9,746,1650,746,,,,
+2021-05-25,PA,082035,Ficarazzi,38.089272,13.46891,,,5,11,16,-11,0,718,9,743,1647,743,,,,Rettificato numero totale casi (-3) per via di inserimenti duplicati
