@@ -35,16 +35,7 @@ for city in scope:
     df['age'] = (now - df['dob']).astype('<m8[Y]').astype(int)
     pos = df.loc[(df['comune'] == city) & (df['stato'] == "POSITIVO") & (df['lib'] == 0)]
     pos = pd.DataFrame(pos, columns = ['age']).sort_values(by=['age'])
-
-    bins = [float("-inf"),10,20,30,40,50,60,70,80,90,float("inf")]
-    labels = ['0-10','11-20','21-30','31-40','41-50','51-60','61-70','71-80','81-90','+90']
-    pos['range'] = pd.cut(pos['age'], bins, labels=labels)
-    pos = pd.DataFrame(pos, columns = ["range"]).groupby(['range']).size().reset_index()
-    pos.columns = ['age','num']
-
-    nums = list(pos['num'])
-    pos = pd.DataFrame(columns=labels)
-    pos.loc[len(pos.index)+1] = nums
+    pos = pos['age'].describe().astype('int').to_frame().T
 
     pos.insert(0, "data", nowstr, True)
     pos.insert(1, "comune", city.title(), True)
