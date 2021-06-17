@@ -35,7 +35,7 @@ for city in scope:
     df['age'] = (now - df['dob']).astype('<m8[Y]').astype(int)
     pos = df.loc[(df['comune'] == city) & (df['stato'] == "POSITIVO") & (df['lib'] == 0)]
     pos = pd.DataFrame(pos, columns = ['age']).sort_values(by=['age'])
-    pos = pos['age'].describe().astype('int').to_frame().T
+    pos = pos['age'].describe().fillna(0).astype('int').to_frame().T
 
     pos.insert(0, "data", nowstr, True)
     pos.insert(1, "comune", city.title(), True)

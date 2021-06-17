@@ -20,7 +20,7 @@ if choice == "y":
     dfy = pd.read_csv(path+"-"+yesterday+'.csv')
 else:
     dft_start = input("Inserire data di oggi\n")
-    dft = pd.read_csv(path+"-"+dft_start+'.csv')
+    dft = pd.read_json(path+"-"+dft_start+'.json')
     dfy_start = input("Inserire data di ieri\n")
     dfy = pd.read_csv(path+"-"+dfy_start+'.csv')
 
