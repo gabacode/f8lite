@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime, timedelta
 import pandas as pd
 import numpy as np
 import csv
@@ -10,6 +10,11 @@ et1  = "Esito primo tampone"
 ddec = "Data decesso"
 '''
 folders = ['input','output']
+
+def ddiff(d1, d2):
+    d1 = datetime.strptime(d1, "%Y-%m-%d")
+    d2 = datetime.strptime(d2, "%Y-%m-%d")
+    return abs((d1 - d2).days)
 
 for folder in folders:
     try:
@@ -32,6 +37,8 @@ for city in scope:
 
     pos = df.loc[(df['comune'] == city) & (df['dt1'].str.len()>1) & (df['et1'] == "POSITIVO")].sort_values(by=['dt1'])
     dec = df.loc[(df['comune'] == city) & (df['ddec'].str.len()>1)].sort_values(by=['ddec'])
+
+    today = date.today().strftime('%Y-%m-%d')
     
     if (pos['dt1'].min() <= dec['ddec'].min()):
         min_range = pos['dt1'].min()
@@ -41,7 +48,13 @@ for city in scope:
     if (pos['dt1'].max() >= dec['ddec'].max()):
         max_range = pos['dt1'].max()
     else:
-        max_range = dec['ddec'].max()    
+        max_range = dec['ddec'].max()
+
+    days = ddiff(today, max_range)
+    lag = 3
+    
+    if (days >= lag):
+        max_range = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=lag)).date()
 
     r1 = pd.date_range(min_range, max_range)
     r2 = pd.date_range(min_range, max_range)
@@ -62,7 +75,7 @@ for city in scope:
 
     p.insert(1, "comune", city.title(), True)
 
-    p.to_csv (r'../output/1d_'+str(city).replace(' ','_').lower()+'.csv', index = False, header = True)
+    p.to_csv (r'../public/datasets/1d_'+str(city).replace(' ','_').lower()+'.csv', index = False, header = True)
 
 
 print("Fatto!")
