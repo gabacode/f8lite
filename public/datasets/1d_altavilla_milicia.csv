@@ -260,7 +260,7 @@ data,comune,nuovi_positivi,deceduti
 2021-06-09,Altavilla Milicia,0,0
 2021-06-10,Altavilla Milicia,0,0
 2021-06-11,Altavilla Milicia,0,0
-2021-06-12,Altavilla Milicia,1,0
+2021-06-12,Altavilla Milicia,0,0
 2021-06-13,Altavilla Milicia,1,0
 2021-06-14,Altavilla Milicia,0,0
 2021-06-15,Altavilla Milicia,0,0
@@ -269,3 +269,6 @@ data,comune,nuovi_positivi,deceduti
 2021-06-18,Altavilla Milicia,0,0
 2021-06-19,Altavilla Milicia,0,0
 2021-06-20,Altavilla Milicia,0,0
+2021-06-21,Altavilla Milicia,0,0
+2021-06-22,Altavilla Milicia,0,0
+2021-06-23,Altavilla Milicia,1,0
