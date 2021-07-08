@@ -189,3 +189,4 @@ data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_
 2021-07-04,PA,082023,Casteldaccia,38.05373,13.52967,,,0,10,10,-1,0,558,24,592,1328,592,,,,
 2021-07-05,PA,082023,Casteldaccia,38.05373,13.52967,,,0,11,11,1,2,559,24,594,1337,594,,,,
 2021-07-07,PA,082023,Casteldaccia,38.05373,13.52967,,,0,7,7,-4,0,562,24,593,1337,593,Rettificato totale_casi (-1) per via di un doppio inserimento,,,
+2021-07-08,PA,082023,Casteldaccia,38.05373,13.52967,,,0,7,7,0,0,562,24,593,1337,593,,,,
