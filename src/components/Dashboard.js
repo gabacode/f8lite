@@ -8,6 +8,7 @@ import Stats from "./Stats";
 import Chart from "./Chart";
 import Redzone from "./Redzone";
 import Trend from "./Trend";
+import Vax from "./Vax";
 import Footer from "./Footer";
 
 export default class Dashboard extends Component {
@@ -20,6 +21,7 @@ export default class Dashboard extends Component {
       scope: this.props.scope,
       cityName: this.props.cityName,
       pop: this.props.pop,
+      istat: this.props.istat,
       daySet: "../datasets/1d_"+this.props.scope+".csv",
       latest: "https://raw.githubusercontent.com/gabacode/f8lite/main/dati-distretto39/dpc-covid19-ita-pa-39-latest.csv",
     };
@@ -93,6 +95,9 @@ export default class Dashboard extends Component {
               <br />
             </Container>
           </Row>
+          <div style={{margin:'20px'}}>
+            <Vax istat={this.state.istat} />
+          </div>
           <Stats lastUpdate={this.state.lastUpdate} attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti} nuovi_positivi={this.state.nuovi_positivi} variazione={this.state.variazione} totale_casi={this.state.totale_casi} tamponi={this.state.tamponi}/>
           <div className="pt--10 ptb--20">
             <h3>
