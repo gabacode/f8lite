@@ -1,2 +1,2 @@
 data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-07-29,PA,082035,Ficarazzi,38.089272,13.46891,,,0,9,9,3,4,740,10,759,1682,759,,,,
+2021-07-30,PA,082035,Ficarazzi,38.089272,13.46891,,,0,10,10,1,1,740,10,760,1683,760,,,,
