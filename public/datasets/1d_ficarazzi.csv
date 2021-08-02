@@ -315,7 +315,7 @@ data,comune,nuovi_positivi,deceduti
 2021-07-18,Ficarazzi,0,0
 2021-07-19,Ficarazzi,0,0
 2021-07-20,Ficarazzi,0,0
-2021-07-21,Ficarazzi,0,0
+2021-07-21,Ficarazzi,1,0
 2021-07-22,Ficarazzi,0,0
 2021-07-23,Ficarazzi,0,0
 2021-07-24,Ficarazzi,2,0
@@ -325,3 +325,4 @@ data,comune,nuovi_positivi,deceduti
 2021-07-28,Ficarazzi,6,0
 2021-07-29,Ficarazzi,6,0
 2021-07-30,Ficarazzi,3,0
+2021-07-31,Ficarazzi,2,0
