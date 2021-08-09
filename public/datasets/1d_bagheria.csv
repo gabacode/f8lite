@@ -309,7 +309,7 @@ data,comune,nuovi_positivi,deceduti
 2021-07-26,Bagheria,4,0
 2021-07-27,Bagheria,5,0
 2021-07-28,Bagheria,13,0
-2021-07-29,Bagheria,11,0
+2021-07-29,Bagheria,10,0
 2021-07-30,Bagheria,9,0
 2021-07-31,Bagheria,5,0
 2021-08-01,Bagheria,12,0
@@ -318,3 +318,5 @@ data,comune,nuovi_positivi,deceduti
 2021-08-04,Bagheria,12,0
 2021-08-05,Bagheria,1,0
 2021-08-06,Bagheria,9,0
+2021-08-07,Bagheria,12,0
+2021-08-08,Bagheria,2,0
