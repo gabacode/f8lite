@@ -82,7 +82,7 @@ data,comune,nuovi_positivi,deceduti
 2020-11-27,Ficarazzi,0,0
 2020-11-28,Ficarazzi,0,0
 2020-11-29,Ficarazzi,5,0
-2020-11-30,Ficarazzi,5,0
+2020-11-30,Ficarazzi,6,0
 2020-12-01,Ficarazzi,3,0
 2020-12-02,Ficarazzi,0,0
 2020-12-03,Ficarazzi,1,0
@@ -288,7 +288,7 @@ data,comune,nuovi_positivi,deceduti
 2021-06-21,Ficarazzi,0,0
 2021-06-22,Ficarazzi,0,0
 2021-06-23,Ficarazzi,0,0
-2021-06-24,Ficarazzi,0,0
+2021-06-24,Ficarazzi,1,0
 2021-06-25,Ficarazzi,0,0
 2021-06-26,Ficarazzi,0,0
 2021-06-27,Ficarazzi,0,0
@@ -348,3 +348,9 @@ data,comune,nuovi_positivi,deceduti
 2021-08-20,Ficarazzi,2,0
 2021-08-21,Ficarazzi,0,0
 2021-08-22,Ficarazzi,3,0
+2021-08-23,Ficarazzi,0,0
+2021-08-24,Ficarazzi,2,0
+2021-08-25,Ficarazzi,0,0
+2021-08-26,Ficarazzi,3,0
+2021-08-27,Ficarazzi,0,0
+2021-08-28,Ficarazzi,4,0
