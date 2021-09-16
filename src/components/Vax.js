@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import csvToJson from 'csvtojson';
 import axios from 'axios';
 
 export default function Vax({istat}){
@@ -9,22 +10,31 @@ export default function Vax({istat}){
     const fetchData = useCallback(async () => {
         axios({
             "method": "GET",
-            "url": `https://dati.regione.sicilia.it/api/3/action/datastore_search?resource_id=30e9d3ea-0c7c-40c0-846b-a36f173028fe&q=${istat}`
+            "url": `https://raw.githubusercontent.com/opendatasicilia/informa-covid19/main/dati/vaccini/SiciliaVax-latest.csv`,
+            "responseType": "blob"
             })
             .then((response) => {
-            setResponseData(response.data.result)
-            fetchData();
-            setIsLoading(false);
+                return response.data.text();
+            })
+            .then((text) => {
+                csvToJson()
+                    .fromString(text)
+                    .then((json) => {
+                        const data = json.filter( x => x.CODISTAT === istat.toString());
+                        setResponseData(data)
+                        setIsLoading(false)
+                    })
             })
             .catch((error) => {
-            alert(error)
+                alert(error)
             })
         }, [istat])
+        
         useEffect(() => {
             fetchData()
         }, [fetchData])
 
-    const risultati = data.records;
+    const risultati = data;
     let totVax = [];
     let totTarget = [];
          
@@ -35,7 +45,7 @@ export default function Vax({istat}){
                 totVax.push(parseInt(record.Vaccinati));
                 totTarget.push(parseInt(record.Target));
             })}
-            <small>Pazienti vaccinati:</small>
+            <small>Pazienti vaccinati (almeno prima dose):</small>
             <ProgressBar now={Math.round(totVax.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)} />
             <small style={{float:'right'}}>
                 {totVax.reduce((a, b) => a + b, 0)} su {totTarget.reduce((a, b) => a + b, 0)} ({Math.round(totVax.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)}%)
