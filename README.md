@@ -1,4 +1,4 @@
-<a href="https://www.datibenecomune.it/"><img src="https://img.shields.io/badge/%F0%9F%99%8F-%23datiBeneComune-%2332CCCC"/></a>
+<a href="https://www.datibenecomune.it/" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%99%8F-%23datiBeneComune-%2332CCCC"/></a>
 --
 # f8lite
 Questo progetto nasce dall'esigenza di comunicare i dati relativi all'incidenza giornaliera del COVID-19 alla popolazione della provincia di Palermo, nel distretto di Bagheria (comuni di Bagheria, Santa Flavia, Ficarazzi, Casteldaccia, e Altavilla Milicia).
