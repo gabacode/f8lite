@@ -1,5 +1,6 @@
+<a href="https://www.datibenecomune.it/"><img src="https://img.shields.io/badge/%F0%9F%99%8F-%23datiBeneComune-%2332CCCC"/></a>
+--
 # f8lite
-<a href="https://www.datibenecomune.it/"><img src="https://img.shields.io/badge/%F0%9F%99%8F-%23datiBeneComune-%23cc3232"/></a>  
 Questo progetto nasce dall'esigenza di comunicare i dati relativi all'incidenza giornaliera del COVID-19 alla popolazione della provincia di Palermo, nel distretto di Bagheria (comuni di Bagheria, Santa Flavia, Ficarazzi, Casteldaccia, e Altavilla Milicia).
 I dati sono derivati dal [software gestionale](https://www.totel.it/portfolio/asp-bagheria) per il data-entry utilizzato dal Distretto ASP 39 di Bagheria, e sono utilizzabili secondo [licenza creative commons](https://creativecommons.org/licenses/by/4.0/deed.it), mentre il codice sorgente del portale è distribuito tramite [licenza GPLv3](https://github.com/gabacode/f8lite/blob/main/LICENSE).
 
