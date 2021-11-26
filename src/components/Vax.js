@@ -10,7 +10,7 @@ export default function Vax({istat}){
     const fetchData = useCallback(async () => {
         axios({
             "method": "GET",
-            "url": `https://raw.githubusercontent.com/gabacode/vaxExtract/main/dati-csv/vaccini-latest.csv`,
+            "url": `https://raw.githubusercontent.com/gabacode/vaxExtract/main/dati-csv/vaccini-abs-latest.csv`,
             "responseType": "blob"
             })
             .then((response) => {
