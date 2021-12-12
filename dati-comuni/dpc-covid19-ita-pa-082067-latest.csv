@@ -1,2 +1,2 @@
 data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-12-11,PA,082067,Santa Flavia,38.08246,13.52758,,,1,9,10,5,5,877,23,910,2089,910,,,,
+2021-12-12,PA,082067,Santa Flavia,38.08246,13.52758,,,1,10,11,1,1,877,23,911,2090,911,,,,
