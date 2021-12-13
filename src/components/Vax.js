@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import csvToJson from 'csvtojson';
 import axios from 'axios';
+import { format } from "date-fns";
 
 export default function Vax({istat}){
     const [isLoading,setIsLoading] = useState(true)
@@ -38,19 +39,35 @@ export default function Vax({istat}){
     const risultati = data;
     let totVax = [];
     let totTarget = [];
+    let totImmuni = [];
          
     return(
         isLoading ? 'Caricamento...' :
-        <div>
-            {risultati.forEach((record) => {
-                totVax.push(parseInt(record.vaccinati));
-                totTarget.push(parseInt(record.target));
-            })}
-            <small>Pazienti vaccinati (almeno prima dose):</small>
-            <ProgressBar now={Math.round(totVax.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)} />
-            <small style={{float:'right'}}>
-                {totVax.reduce((a, b) => a + b, 0)} su {totTarget.reduce((a, b) => a + b, 0)} ({Math.round(totVax.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)}%)
-            </small>
-        </div>
+        <div className="pt-4 pb-2 row">
+            <h3 className="mx-auto">
+                Vaccinati al {format(new Date(risultati[0].data), "dd/MM/yyyy")}
+            </h3>
+            <div className="col-12">
+                {risultati.forEach((record) => {
+                    totVax.push(parseInt(record.vaccinati));
+                    totTarget.push(parseInt(record.target));
+                })}
+                <small>Pazienti vaccinati (almeno prima dose):</small>
+                <ProgressBar now={Math.round(totVax.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)} />
+                <small style={{float:'right'}}>
+                    {totVax.reduce((a, b) => a + b, 0)} su {totTarget.reduce((a, b) => a + b, 0)} ({Math.round(totVax.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)}%)
+                </small>
+            </div>
+            <div className="col-12">
+                    {risultati.forEach((record) => {
+                        totImmuni.push(parseInt(record.immunizzati));
+                    })}
+                    <small>Pazienti immunizzati (almeno 2 dosi o Janssen monodose):</small>
+                    <ProgressBar now={Math.round(totImmuni.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)} />
+                    <small style={{float:'right'}}>
+                        {totImmuni.reduce((a, b) => a + b, 0)} su {totTarget.reduce((a, b) => a + b, 0)} ({Math.round(totImmuni.reduce((a, b) => a + b, 0)/totTarget.reduce((a, b) => a + b, 0)*100)}%)
+                    </small>
+                </div>
+            </div>
         )
     }
