@@ -427,7 +427,7 @@ data,comune,nuovi_positivi,deceduti
 2021-11-22,Casteldaccia,0,0
 2021-11-23,Casteldaccia,1,0
 2021-11-24,Casteldaccia,0,0
-2021-11-25,Casteldaccia,10,0
+2021-11-25,Casteldaccia,9,0
 2021-11-26,Casteldaccia,1,0
 2021-11-27,Casteldaccia,1,0
 2021-11-28,Casteldaccia,0,0
@@ -450,3 +450,5 @@ data,comune,nuovi_positivi,deceduti
 2021-12-15,Casteldaccia,1,0
 2021-12-16,Casteldaccia,2,0
 2021-12-17,Casteldaccia,2,0
+2021-12-18,Casteldaccia,2,0
+2021-12-19,Casteldaccia,5,0
