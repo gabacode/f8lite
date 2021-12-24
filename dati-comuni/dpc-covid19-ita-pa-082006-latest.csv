@@ -1,2 +1,2 @@
 data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2021-12-23,PA,082006,Bagheria,38.078918,13.512365,,,1,119,120,8,10,3677,128,3925,8785,3925,,,,
+2021-12-24,PA,082006,Bagheria,38.078918,13.512365,,,1,142,143,23,24,3677,129,3949,8830,3949,,,,
