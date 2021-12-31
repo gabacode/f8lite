@@ -89,7 +89,7 @@ export default class Dashboard extends Component {
         <Container>
           <Row>
             <Container>
-              <h1>Comune di {this.state.cityName}</h1>
+              <h1 className="bold">Comune di {this.state.cityName}</h1>
               <h4>Popolazione: {this.props.pop} abitanti</h4>
               <small>Fonte dati: ASP DISTRETTO 39</small>
               <br />
