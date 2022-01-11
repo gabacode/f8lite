@@ -51,7 +51,7 @@ data,comune,nuovi_positivi,deceduti
 2020-11-10,Bagheria,12,2
 2020-11-11,Bagheria,57,1
 2020-11-12,Bagheria,14,2
-2020-11-13,Bagheria,21,1
+2020-11-13,Bagheria,22,1
 2020-11-14,Bagheria,31,1
 2020-11-15,Bagheria,43,0
 2020-11-16,Bagheria,9,1
@@ -458,7 +458,7 @@ data,comune,nuovi_positivi,deceduti
 2021-12-22,Bagheria,2,0
 2021-12-23,Bagheria,29,0
 2021-12-24,Bagheria,23,0
-2021-12-25,Bagheria,13,0
+2021-12-25,Bagheria,14,0
 2021-12-26,Bagheria,3,0
 2021-12-27,Bagheria,34,0
 2021-12-28,Bagheria,33,0
@@ -473,4 +473,5 @@ data,comune,nuovi_positivi,deceduti
 2022-01-06,Bagheria,24,0
 2022-01-07,Bagheria,22,0
 2022-01-08,Bagheria,27,0
-2022-01-09,Bagheria,13,0
+2022-01-09,Bagheria,14,0
+2022-01-10,Bagheria,1,0
