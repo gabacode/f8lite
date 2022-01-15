@@ -1,2 +1,2 @@
 data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2022-01-14,PA,082023,Casteldaccia,38.05373,13.52967,,,0,98,98,7,19,871,26,995,2259,995,,,,
+2022-01-15,PA,082023,Casteldaccia,38.05373,13.52967,,,0,106,106,8,14,877,26,1009,2279,1009,,,,
