@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { readRemoteFile } from "react-papaparse";
 import { format } from "date-fns";
@@ -11,26 +11,24 @@ import Trend from "./Trend";
 import Vax from "./Vax";
 import Footer from "./Footer";
 
-export default class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lastDay: 1,
-      lastWeek: 1,
-      thisWeek: 1,
-      scope: this.props.scope,
-      cityName: this.props.cityName,
-      pop: this.props.pop,
-      istat: this.props.istat,
-      daySet: "../datasets/1d_"+this.props.scope+".csv",
-      latest: "https://raw.githubusercontent.com/gabacode/f8lite/main/dati-distretto39/dpc-covid19-ita-pa-39-latest.csv",
-    };
-  }
+export default function Dashboard(...props) {
 
-  parseData(url, callBack) {
+  const input = props[0].data
+  const [state] = useState({
+    cityName: input.cityName,
+    scope: input.scope,
+    pop: input.pop,
+    istat: input.istat,
+    daySet: `../datasets/1d_${input.scope}.csv`,
+    latest: `https://raw.githubusercontent.com/gabacode/f8lite/main/dati-comuni/dpc-covid19-ita-pa-${input.istat}-latest.csv`
+  })
+  const [latest, setLatest] = useState({})
+  const [daily, setDaily] = useState({})
+
+  const parseData = (url, callBack) => {
     readRemoteFile(url, {
       download: true,
-      header: false,
+      header: true,
       dynamicTyping: true,
       complete: (results) => {
         callBack(results.data);
@@ -38,111 +36,108 @@ export default class Dashboard extends Component {
     });
   }
 
-  getDay = (data) => {
-    var l = Object.keys(data).length;
-    var wv = [];
-    var i;
-    for (i=0;i<l;i++){
-      wv.push((data)[i][2]);
-    }
-    var tw = wv.slice(-8).slice(0, -1).reduce((a, b) => a + b);
-    var lw = wv.slice(-15).slice(0, -8).reduce((a, b) => a + b);
-    this.setState({
-      firstDay: format(new Date(data[1][0]), "dd/MM/yyyy"),
-      lastDay: data[l-2][0],
-      lastWeek: parseInt(lw),
-      thisWeek: parseInt(tw),
-    });
-  };
+  const formatDate = (date) => format(new Date(date), "dd/MM/yyyy")
 
-  getStats = (data) => {
-    var i;
-    var l = Object.keys(data).length;
-    for (i=1;i<(l-1);i++){
-      var city = (data[i][3]).toString();
-      if(city === this.props.cityName){
-        this.setState({
-          lastUpdate: format(new Date(data[i][0]), "dd/MM/yyyy"),
-          attuali: data[i][10],
-          ricoverati: data[i][8],
-          guariti: data[i][13],
-          deceduti: data[i][14],
-          nuovi_positivi: data[i][12],
-          variazione: data[i][11],
-          totale_casi: data[i][15],
-          tamponi: data[i][16],
-        });
-      }else{
-        //pass
-      }      
+  const getDay = (data) => {
+    const length = Object.keys(data).length;
+    let nuovi_positivi = []
+    for (let i=0; i<length; i++){
+      nuovi_positivi.push((data)[i].nuovi_positivi);
     }
-  };
-
-  componentDidMount() {
-    this.parseData(this.state.daySet, this.getDay);
-    this.parseData(this.state.latest, this.getStats);
+    const this_week = nuovi_positivi.slice(-8).slice(0, -1).reduce((a, b) => a + b);
+    const last_week = nuovi_positivi.slice(-15).slice(0, -8).reduce((a, b) => a + b);
+    setDaily({
+      firstDay: data[0].data,
+      lastDay: data[length-2].data,
+      thisWeek: parseInt(this_week),
+      lastWeek: parseInt(last_week)
+    })
   }
 
-  render() {
+  useEffect(() => {
+    const getStats = (data) => {
+      const latest = data[0]
+      setLatest({
+        lastUpdate: formatDate(latest.data),
+        attuali: latest.totale_positivi,
+        ricoverati: latest.totale_ospedalizzati,
+        guariti: latest.dimessi_guariti,
+        deceduti: latest.deceduti,
+        nuovi_positivi: latest.nuovi_positivi,
+        variazione: latest.variazione_totale_positivi,
+        totale_casi: latest.totale_casi,
+        tamponi: latest.tamponi
+      })
+    }
+    parseData(state.daySet, getDay);
+    parseData(state.latest, getStats);
+  },[state.daySet, state.latest])
+
     return (
-      <div className="App pt--40">
-        <Container>
+        <Container className="App pt--40">
+          
           <Row>
             <Container>
-              <h1 className="bold">Comune di {this.state.cityName}</h1>
-              <h4>Popolazione: {this.props.pop} abitanti</h4>
+              <h1 className="bold">Comune di {state.cityName}</h1>
+              <h4>Popolazione: {state.pop} abitanti</h4>
               <small>Fonte dati: ASP DISTRETTO 39</small>
               <br />
             </Container>
           </Row>
+          
           <div style={{margin:'20px'}}>
-            <Vax istat={this.state.istat} />
+            <Vax istat={input.istat} />
           </div>
-          <Stats lastUpdate={this.state.lastUpdate} attuali={this.state.attuali} ricoverati={this.state.ricoverati} guariti={this.state.guariti} deceduti={this.state.deceduti} nuovi_positivi={this.state.nuovi_positivi} variazione={this.state.variazione} totale_casi={this.state.totale_casi} tamponi={this.state.tamponi}/>
+          
+          <Stats lastUpdate={latest.lastUpdate} attuali={latest.attuali} ricoverati={latest.ricoverati} guariti={latest.guariti} deceduti={latest.deceduti} nuovi_positivi={latest.nuovi_positivi} variazione={latest.variazione} totale_casi={latest.totale_casi} tamponi={latest.tamponi}/>
+          
           <div className="pt--10 ptb--20">
             <h3>
-              Incidenza giornaliera al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
+              Incidenza giornaliera al {daily.lastDay}
               <span data-tip data-for="incInfo">
                 &nbsp;<FaQuestionCircle />
               </span>
             </h3>
                 <ReactTooltip id="incInfo" place="right" effect="solid" type="info">
-                  Dati calcolati per date dei primi tamponi positivi (dt1, et1=Positivo) a partire dal {this.state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
+                  Dati calcolati per date dei primi tamponi positivi (dt1, et1=Positivo) a partire dal {state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
                 </ReactTooltip>
             <h6>
-              <Redzone tw={this.state.thisWeek} pop={this.state.pop} />
+              <Redzone tw={daily.thisWeek} pop={state.pop} />
             </h6>
-            <Chart containerId="pos_chart" url={this.state.daySet} mode="nuovi_positivi" label="Positivi"/>
+            <Chart containerId="pos_chart" url={state.daySet} mode="nuovi_positivi" label="Positivi"/>
           </div>
+          
           <div>
             <h3>
-                Decessi al {format(new Date(this.state.lastDay), "dd/MM/yyyy")}
+                Decessi al {daily.lastDay}
                 <span data-tip data-for="decInfo">
                 &nbsp;<FaQuestionCircle />
                 </span>
             </h3>
                 <ReactTooltip id="decInfo" place="right" effect="solid" type="info">
-                  Dati calcolati per data di decesso (ddec, stato=Deceduto) a partire dal {this.state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
+                  Dati calcolati per data di decesso (ddec, stato=Deceduto) a partire dal {state.firstDay},<br/> potrebbero essere aggiornati con qualche giorno di ritardo.
                 </ReactTooltip>
-            <Chart containerId="dec_chart" url={this.state.daySet} mode="deceduti" label="Decessi"/>
+            <Chart containerId="dec_chart" url={state.daySet} mode="deceduti" label="Decessi"/>
           </div>
+          
           <Row>
             <Col xs={12} className="pt--0 ptb--30">
-              <Button size="sm" href={this.state.daySet}>
+              <Button size="sm" href={state.daySet}>
                 Scarica Dataset
               </Button>
             </Col>
           </Row>
+          
           <Container className="center">
             <Row>
               <Col xs={12}>
-                <Trend tw={this.state.thisWeek} lw={this.state.lastWeek} />
+                <Trend tw={daily.thisWeek} lw={daily.lastWeek} />
               </Col>
             </Row>
           </Container>
+          
           <Footer />
+        
         </Container>
-      </div>
     );
   }
-}

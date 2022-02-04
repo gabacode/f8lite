@@ -1,0 +1,37 @@
+[
+    {
+       "cityName":"Bagheria",
+       "scope":"bagheria",
+       "path":"bagheria",
+       "pop":53149,
+       "istat":"082006"
+    },
+    {
+       "cityName":"Santa Flavia",
+       "scope":"santa_flavia",
+       "path":"santaflavia",
+       "pop":10952,
+       "istat":"082067"
+    },
+    {
+       "cityName":"Ficarazzi",
+       "scope":"ficarazzi",
+       "path":"ficarazzi",
+       "pop":12763,
+       "istat":"082035"
+    },
+    {
+       "cityName":"Casteldaccia",
+       "scope":"casteldaccia",
+       "path":"casteldaccia",
+       "pop":11543,
+       "istat":"082023"
+    },
+    {
+       "cityName":"Altavilla Milicia",
+       "scope":"altavilla_milicia",
+       "path":"altavilla",
+       "pop":8452,
+       "istat":"082004"
+    }
+ ]
