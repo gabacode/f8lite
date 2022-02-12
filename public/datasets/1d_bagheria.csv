@@ -501,8 +501,10 @@ data,comune,nuovi_positivi,deceduti
 2022-02-03,Bagheria,31,0
 2022-02-04,Bagheria,23,0
 2022-02-05,Bagheria,31,0
-2022-02-06,Bagheria,33,0
+2022-02-06,Bagheria,33,1
 2022-02-07,Bagheria,24,0
 2022-02-08,Bagheria,45,0
-2022-02-09,Bagheria,22,0
-2022-02-10,Bagheria,11,0
+2022-02-09,Bagheria,28,0
+2022-02-10,Bagheria,17,0
+2022-02-11,Bagheria,7,0
+2022-02-12,Bagheria,3,0
