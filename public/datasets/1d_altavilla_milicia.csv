@@ -464,8 +464,8 @@ data,comune,nuovi_positivi,deceduti
 2021-12-30,Altavilla Milicia,12,0
 2021-12-31,Altavilla Milicia,5,0
 2022-01-01,Altavilla Milicia,3,0
-2022-01-02,Altavilla Milicia,4,0
-2022-01-03,Altavilla Milicia,8,0
+2022-01-02,Altavilla Milicia,5,0
+2022-01-03,Altavilla Milicia,7,0
 2022-01-04,Altavilla Milicia,14,0
 2022-01-05,Altavilla Milicia,1,0
 2022-01-06,Altavilla Milicia,2,0
@@ -481,7 +481,7 @@ data,comune,nuovi_positivi,deceduti
 2022-01-16,Altavilla Milicia,1,0
 2022-01-17,Altavilla Milicia,14,0
 2022-01-18,Altavilla Milicia,10,0
-2022-01-19,Altavilla Milicia,14,1
+2022-01-19,Altavilla Milicia,13,1
 2022-01-20,Altavilla Milicia,5,1
 2022-01-21,Altavilla Milicia,10,0
 2022-01-22,Altavilla Milicia,6,0
@@ -494,14 +494,14 @@ data,comune,nuovi_positivi,deceduti
 2022-01-29,Altavilla Milicia,6,0
 2022-01-30,Altavilla Milicia,5,0
 2022-01-31,Altavilla Milicia,4,0
-2022-02-01,Altavilla Milicia,7,0
+2022-02-01,Altavilla Milicia,6,0
 2022-02-02,Altavilla Milicia,6,0
 2022-02-03,Altavilla Milicia,10,0
 2022-02-04,Altavilla Milicia,4,0
 2022-02-05,Altavilla Milicia,7,0
 2022-02-06,Altavilla Milicia,5,0
 2022-02-07,Altavilla Milicia,3,0
-2022-02-08,Altavilla Milicia,5,0
+2022-02-08,Altavilla Milicia,4,0
 2022-02-09,Altavilla Milicia,4,0
 2022-02-10,Altavilla Milicia,1,0
 2022-02-11,Altavilla Milicia,0,0
@@ -510,3 +510,6 @@ data,comune,nuovi_positivi,deceduti
 2022-02-14,Altavilla Milicia,1,0
 2022-02-15,Altavilla Milicia,6,0
 2022-02-16,Altavilla Milicia,1,0
+2022-02-17,Altavilla Milicia,0,0
+2022-02-18,Altavilla Milicia,0,0
+2022-02-19,Altavilla Milicia,4,0
