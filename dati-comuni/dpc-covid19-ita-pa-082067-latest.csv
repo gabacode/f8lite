@@ -1,2 +1,2 @@
 data,sigla_provincia,codice_comune,denominazione_comune,lat,long,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note,ingressi_terapia_intensiva,note_test,note_casi
-2022-02-21,PA,082067,Santa Flavia,38.08246,13.52758,,,0,91,91,2,15,1111,23,1225,2682,1225,,,,
+2022-02-22,PA,082067,Santa Flavia,38.08246,13.52758,,,0,98,98,7,9,1113,23,1234,2696,1234,,,,
