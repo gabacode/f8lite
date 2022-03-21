@@ -526,7 +526,7 @@ data,comune,nuovi_positivi,deceduti
 2022-02-14,Ficarazzi,19,0
 2022-02-15,Ficarazzi,2,0
 2022-02-16,Ficarazzi,5,0
-2022-02-17,Ficarazzi,2,0
+2022-02-17,Ficarazzi,3,0
 2022-02-18,Ficarazzi,17,0
 2022-02-19,Ficarazzi,10,0
 2022-02-20,Ficarazzi,5,0
@@ -551,3 +551,10 @@ data,comune,nuovi_positivi,deceduti
 2022-03-11,Ficarazzi,9,0
 2022-03-12,Ficarazzi,6,0
 2022-03-13,Ficarazzi,14,0
+2022-03-14,Ficarazzi,9,0
+2022-03-15,Ficarazzi,11,0
+2022-03-16,Ficarazzi,11,0
+2022-03-17,Ficarazzi,4,0
+2022-03-18,Ficarazzi,5,0
+2022-03-19,Ficarazzi,3,0
+2022-03-20,Ficarazzi,1,0
