@@ -10,7 +10,7 @@ import { Redzone } from './Redzone';
 import { Trend } from './Trend';
 import { Vax } from './Vax';
 import { Footer } from './Footer';
-import Chart from './Chart';
+import { Chart } from './ChartNew';
 
 interface DashboardProps {
   comune: Comune;
