@@ -4,13 +4,12 @@ import { BarPrice, createChart, SingleValueData } from 'lightweight-charts';
 import { useSize } from '../hooks/useSize';
 
 interface ChartProps {
-  containerId: string;
   url: string;
   mode: string;
   label: string;
 }
 
-export const Chart: FC<ChartProps> = ({ containerId, url, mode, label }) => {
+export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
   const size = useSize(ref);
   const [chartData, setChartData] = useState<SingleValueData[]>([]);
@@ -27,7 +26,7 @@ export const Chart: FC<ChartProps> = ({ containerId, url, mode, label }) => {
       complete: results => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         results.data.map((result: any) => {
-          if (mode === 'nuovi_positivi') {
+          if (mode === 'positivi') {
             dayData.push({
               time: result.data,
               value: parseInt(result.nuovi_positivi),
@@ -129,7 +128,7 @@ export const Chart: FC<ChartProps> = ({ containerId, url, mode, label }) => {
 
   return (
     <>
-      <div id={containerId} ref={ref} />
+      <div ref={ref} />
       <div className="text-left">
         <p className="m-0">
           {label} <span className="text-info">{dataText}</span>

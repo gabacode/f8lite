@@ -57,12 +57,7 @@ export const Dashboard: FC<DashboardProps> = ({ comune }) => {
                 population={comune.pop}
               />
             </h6>
-            <Chart
-              containerId="pos_chart"
-              url={daySet}
-              mode="nuovi_positivi"
-              label="Positivi"
-            />
+            <Chart url={daySet} mode="positivi" label="Positivi" />
           </div>
 
           <div>
@@ -78,12 +73,7 @@ export const Dashboard: FC<DashboardProps> = ({ comune }) => {
               partire dal {formatDate(weeklyReport.firstDay)},<br /> potrebbero
               essere aggiornati con qualche giorno di ritardo.
             </ReactTooltip>
-            <Chart
-              containerId="dec_chart"
-              url={daySet}
-              mode="deceduti"
-              label="Decessi"
-            />
+            <Chart url={daySet} mode="deceduti" label="Decessi" />
           </div>
 
           <Row>
