@@ -26,7 +26,8 @@ export const Dashboard: FC<DashboardProps> = ({ comune }) => {
     <Container className="App pt--40">
       <Row>
         <Container>
-          <h1 className="bold">Comune di {comune.cityName}</h1>
+          <img src={`./images/${comune.istat}.jpg`} alt={comune.cityName} />
+          <h1 className="bold mt-2">Comune di {comune.cityName}</h1>
           <h4>Popolazione: {comune.pop} abitanti</h4>
           <small>Fonte dati: ASP DISTRETTO 39</small>
           <br />
