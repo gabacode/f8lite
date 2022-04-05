@@ -2,7 +2,7 @@ import React, { FC, Fragment } from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 import { FaQuestionCircle } from 'react-icons/fa';
-import { LatestReport } from '../types';
+import { LatestReport } from '../../types';
 
 export interface StatsProps {
   latestReport: LatestReport;

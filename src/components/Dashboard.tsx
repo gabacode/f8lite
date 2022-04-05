@@ -5,12 +5,13 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { Constants } from '../constants';
 import { Comune } from '../types';
 import { useGetData } from '../hooks/useGetData';
-import { Stats } from './Stats';
-import { Redzone } from './Redzone';
-import { Trend } from './Trend';
-import { Vax } from './Vax';
-import { Footer } from './Footer';
-import Chart from './Chart';
+
+import { Vax } from './elements/Vax';
+import { Stats } from './elements/Stats';
+import { Redzone } from './elements/Redzone';
+import { Chart } from './elements/Chart';
+import { Trend } from './elements/Trend';
+import { Footer } from './layout/Footer';
 
 interface DashboardProps {
   comune: Comune;
@@ -57,12 +58,7 @@ export const Dashboard: FC<DashboardProps> = ({ comune }) => {
                 population={comune.pop}
               />
             </h6>
-            <Chart
-              containerId="pos_chart"
-              url={daySet}
-              mode="nuovi_positivi"
-              label="Positivi"
-            />
+            <Chart url={daySet} mode="positivi" label="Positivi" />
           </div>
 
           <div>
@@ -78,12 +74,7 @@ export const Dashboard: FC<DashboardProps> = ({ comune }) => {
               partire dal {formatDate(weeklyReport.firstDay)},<br /> potrebbero
               essere aggiornati con qualche giorno di ritardo.
             </ReactTooltip>
-            <Chart
-              containerId="dec_chart"
-              url={daySet}
-              mode="deceduti"
-              label="Decessi"
-            />
+            <Chart url={daySet} mode="deceduti" label="Decessi" />
           </div>
 
           <Row>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles.scss';
 import comuni from './data/comuni.json';
-import { Menu } from './components/Menu';
+import { Menu } from './components/layout/Menu';
 import { Dashboard } from './components/Dashboard';
 
 const App = () => {
