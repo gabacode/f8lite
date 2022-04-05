@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { readRemoteFile } from 'react-papaparse';
 import { BarPrice, createChart, SingleValueData } from 'lightweight-charts';
-import { useSize } from '../hooks/useSize';
+import { useSize } from '../../hooks/useSize';
 
 interface ChartProps {
   url: string;

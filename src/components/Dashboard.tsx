@@ -5,12 +5,13 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { Constants } from '../constants';
 import { Comune } from '../types';
 import { useGetData } from '../hooks/useGetData';
-import { Stats } from './Stats';
-import { Redzone } from './Redzone';
-import { Trend } from './Trend';
-import { Vax } from './Vax';
-import { Footer } from './Footer';
-import { Chart } from './Chart';
+
+import { Vax } from './elements/Vax';
+import { Stats } from './elements/Stats';
+import { Redzone } from './elements/Redzone';
+import { Chart } from './elements/Chart';
+import { Trend } from './elements/Trend';
+import { Footer } from './layout/Footer';
 
 interface DashboardProps {
   comune: Comune;

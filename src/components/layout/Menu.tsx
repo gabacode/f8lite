@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Nav, Navbar, Button, Container } from 'react-bootstrap';
 import { FaFeatherAlt, FaGithub } from 'react-icons/fa';
-import { Comune } from '../types';
+import { Comune } from '../../types';
 
 interface MenuProps {
   data: Comune[];
