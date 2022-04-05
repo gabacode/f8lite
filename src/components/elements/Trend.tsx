@@ -18,6 +18,8 @@ export const Trend: FC<TrendProps> = ({ lastWeek, thisWeek }) => {
     setTrend(thisWeek / lastWeek);
   }, [lastWeek, thisWeek, trend]);
 
+  const trendPercent = ((trend - 1) * 100).toFixed(2);
+
   return (
     <Fragment>
       <div className="pt--20">
@@ -36,16 +38,16 @@ export const Trend: FC<TrendProps> = ({ lastWeek, thisWeek }) => {
           minValue={0}
           maxValue={2}
           value={trend}
-          segments={5555}
+          segments={1024}
           maxSegmentLabels={0}
           startColor="green"
           endColor="red"
           width={300}
           needleHeightRatio={0.618}
-          currentValueText={String(((trend - 1) * 100).toFixed(2)) + '%'}
+          currentValueText={`${trendPercent}%`}
           ringWidth={42}
-          needleTransitionDuration={3333}
-          needleTransition={Transition.easeElasticIn}
+          needleTransitionDuration={2000}
+          needleTransition={Transition.easeExpInOut}
           needleColor={'#90f2ff'}
         />
       </div>
