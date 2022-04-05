@@ -1,6 +1,7 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { readRemoteFile } from 'react-papaparse';
 import { BarPrice, createChart, SingleValueData } from 'lightweight-charts';
+import { useSize } from '../hooks/useSize';
 
 interface ChartProps {
   containerId: string;
@@ -9,8 +10,9 @@ interface ChartProps {
   label: string;
 }
 
-export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
+export const Chart: FC<ChartProps> = ({ containerId, url, mode, label }) => {
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const size = useSize(ref);
   const [chartData, setChartData] = useState<SingleValueData[]>([]);
   const [smaData, setSmaData] = useState<SingleValueData[]>([]);
   const [dataText, setDataText] = useState('n/a');
@@ -28,13 +30,13 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
           if (mode === 'nuovi_positivi') {
             dayData.push({
               time: result.data,
-              value: result.nuovi_positivi,
+              value: parseInt(result.nuovi_positivi),
             });
           }
           if (mode === 'deceduti') {
             dayData.push({
               time: result.data,
-              value: result.deceduti,
+              value: parseInt(result.deceduti),
             });
           }
         });
@@ -49,7 +51,7 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
     getData(url, mode);
   }, [url, mode, getData]);
 
-  const calculateSMA = (data: SingleValueData[], period: number) => {
+  const calculateSMA = (data: SingleValueData[], count: number) => {
     const avg = (data: SingleValueData[]) => {
       let sum = 0;
       for (let i = 0; i < data.length; i++) {
@@ -58,8 +60,8 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
       return sum / data.length;
     };
     const result = [];
-    for (let i = period - 1, len = data.length; i < len; i++) {
-      const val = avg(data.slice(i - period + 1, i));
+    for (let i = count - 1; i < data.length; i++) {
+      const val = avg(data.slice(i - count + 1, i));
       const offset = 3;
       result.push({
         time: data[i - offset].time,
@@ -81,7 +83,6 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
 
     const handleSMAText = (smaVal: BarPrice) => {
       if (smaVal) {
-        console.log(smaVal);
         const value = (Math.round(smaVal * 100) / 100).toFixed(2);
         setSmaText(value);
       } else {
@@ -90,7 +91,7 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
     };
 
     const chart = createChart(ref.current, {
-      width: 960,
+      width: size?.width ?? 960,
       height: 300,
       layout: {
         textColor: '#333',
@@ -99,21 +100,10 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
     });
 
     const posiLine = chart.addLineSeries({
-      color: 'rgb(38, 198, 218)',
       lineWidth: 1,
-      visible: false,
       lineStyle: 1,
     });
     posiLine.setData(chartData);
-
-    const smaLine = chart.addAreaSeries({
-      lineColor: 'rgb(4, 111, 232)',
-      lineWidth: 1,
-      // offset: 5,
-      visible: true,
-    });
-    smaLine.setData(smaData);
-
     chart.subscribeCrosshairMove(param => {
       if (param.seriesPrices) {
         const value = param.seriesPrices.get(posiLine);
@@ -121,6 +111,10 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
       }
     });
 
+    const smaLine = chart.addAreaSeries({
+      lineWidth: 2,
+    });
+    smaLine.setData(smaData);
     chart.subscribeCrosshairMove(param => {
       if (param.seriesPrices) {
         const value = param.seriesPrices.get(smaLine);
@@ -131,17 +125,17 @@ export const Chart: FC<ChartProps> = ({ url, mode, label }) => {
     return () => {
       chart.remove();
     };
-  }, [ref, chartData, smaData]);
+  }, [ref, chartData, smaData, size]);
 
   return (
     <>
-      <div ref={ref} />
+      <div id={containerId} ref={ref} />
       <div className="text-left">
         <p className="m-0">
-          SMA7 <span className="text-success">{smaText}</span>
+          {label} <span className="text-info">{dataText}</span>
         </p>
         <p>
-          {label} <span className="text-info">{dataText}</span>
+          SMA7 <span className="text-success">{smaText}</span>
         </p>
       </div>
     </>
